@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.22685185185185186" />
+        <entry key="app/src/main/res/layout/Login_Page.xml" value="0.1526268115942029" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/add_new_weight.xml" value="0.1016963007439042" />
+        <entry key="app/src/main/res/layout/contact_list_view.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/data_display.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/date_grid_cells.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/edit_and_delete_buttons.xml" value="0.221011776445111" />
+        <entry key="app/src/main/res/layout/edit_values.xml" value="0.19092147485406166" />
+        <entry key="app/src/main/res/layout/grid.xml" value="0.20190777375200752" />
+        <entry key="app/src/main/res/layout/grid_cell_views.xml" value="0.14130434782608695" />
+        <entry key="app/src/main/res/layout/grid_cells.xml" value="0.18969168540974965" />
+        <entry key="app/src/main/res/layout/grid_view_cells.xml" value="0.33870960484946133" />
+        <entry key="app/src/main/res/layout/grid_views.xml" value="0.2213268533753779" />
+        <entry key="app/src/main/res/layout/home_page.xml" value="0.13711652484879042" />
+        <entry key="app/src/main/res/layout/login_page.xml" value="0.13728470111448834" />
+        <entry key="app/src/main/res/layout/main_activity.xml" value="0.22692964247448194" />
+        <entry key="app/src/main/res/layout/main_page.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/registration_page.xml" value="0.2811957924089957" />
+        <entry key="app/src/main/res/layout/selection_views.xml" value="0.18077214701013025" />
+        <entry key="app/src/main/res/layout/sms_page.xml" value="0.3736872700488119" />
+        <entry key="app/src/main/res/layout/table_headers.xml" value="0.1863799283154122" />
+        <entry key="app/src/main/res/layout/table_view.xml" value="0.1421875" />
+        <entry key="app/src/main/res/layout/weight_grid_view_cells.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.weight_watcher">
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
+
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Weight_Watcher">
+        <activity android:name=".views.registration_page"/>
+        <activity android:name=".views.Grid_Display"
+            android:exported="false"/>
+        <activity android:name=".views.NewWeight"/>
+        <activity android:name=".views.Update_Database_Entry"/>
+
+
+
+
+
+
+        <activity
+            android:name=".views.MainActivity"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+
+    </application>
+
+</manifest>

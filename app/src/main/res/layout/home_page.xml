@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addNewWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:clickable="true"
+        android:contentDescription="add new weight"
+        android:screenReaderFocusable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/grid"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:clickable="false"
+        android:editable="false"
+        android:fontFamily="sans-serif-black"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/progressText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/headers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/welcomeText"
+        tools:layout_constraintEnd_toEndOf="@id/grid"
+        tools:layout_constraintStart_toStartOf="@id/grid"
+        tools:layout_editor_absoluteX="76dp">
+
+        <TextView
+            android:id="@+id/editDeleteShareHeader"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center_horizontal|fill_vertical"
+            android:text="Edit/Delete/Share"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/dateHeaderCell"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center_horizontal|fill_vertical"
+            android:text="Date"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/weightHeaderCell"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center_horizontal|fill_vertical"
+            android:text="Weight"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/goalWeightHeaderCell"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center_horizontal|fill_vertical"
+            android:text="Goal Weight"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <GridView
+        android:id="@+id/grid"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:horizontalSpacing="10dp"
+        android:numColumns="1"
+        android:stretchMode="columnWidth"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headers" />
+</androidx.constraintlayout.widget.ConstraintLayout>
