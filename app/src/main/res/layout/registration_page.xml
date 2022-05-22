@@ -84,6 +84,17 @@
                 android:textColor="#040404" />
 
             <EditText
+                android:id="@+id/phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Phone Number"
+                android:inputType="none|textPersonName"
+                android:minHeight="48dp"
+                android:paddingTop="5dp"
+                android:textColor="#040404" />
+
+            <EditText
                 android:id="@+id/register_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
