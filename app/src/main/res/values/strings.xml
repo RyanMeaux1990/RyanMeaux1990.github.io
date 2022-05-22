@@ -10,5 +10,6 @@
     <string name="datetextbox">dateTextBox</string>
     <string name="channel_name">notification</string>
     <string name="channel_description">weight loss</string>
+    <string name="enter_registered_phone_number">Enter registered phone number</string>
 
 </resources>
