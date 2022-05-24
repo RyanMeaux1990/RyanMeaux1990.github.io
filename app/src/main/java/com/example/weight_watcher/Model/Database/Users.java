@@ -3,6 +3,7 @@ package com.example.weight_watcher.Model.Database;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import com.example.weight_watcher.Model.Database.Schemes.User_Database_Scheme;
 
@@ -10,10 +11,12 @@ public class Users extends SQLiteOpenHelper {
     public User_Database_Scheme scheme = new User_Database_Scheme();
     public SQLiteDatabase writableDataBase;
     public SQLiteDatabase readableDatabase;
-
+    int currentVersion = 2;
+    int oldVersion = 1;
     public Users(Context context) {
 
-        super(context, "application_users", null, 1);
+        super(context, "the_app_db", null, 1);
+
     }
     public void getReadDatabase(){
 
@@ -23,19 +26,26 @@ public class Users extends SQLiteOpenHelper {
         writableDataBase = getWritableDatabase();
     }
     public void onCreate(SQLiteDatabase db) {
-
+        Log.v("On Create", "On create");
 
         db.execSQL("create table " + scheme.TABLE_NAME + " (" +
-                scheme.COL_ID + "INTEGER PRIMARY KEY, " +
-                scheme.COL_FIRSTNAME + " text, " +
-                scheme.COL_LASTNAME + " text, " +
-                scheme.COL_EMAIL + " text, " +
-                scheme.COL_PASSWORD + " text)");
+                scheme.COL_ID + " INTEGER PRIMARY KEY, " +
+                scheme.COL_FIRSTNAME + " TEXT, " +
+                scheme.COL_LASTNAME + " TEXT, " +
+                scheme.COL_EMAIL + " TEXT, " +
+                scheme.COL_PASSWORD + " TEXT, " +
+                scheme.COL_PHONE_NUMBER + " TEXT)");
 
     }
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
         db.execSQL("drop table if exists " + scheme.TABLE_NAME);
         onCreate(db);
+    }
+
+    public void addNewColumn(SQLiteDatabase database){
+        Log.v("On Upgrade", "On Upgrade");
+        database.execSQL("ALTER TABLE" + scheme.TABLE_NAME +" ADD COLUMN phone_number");
     }
 
 

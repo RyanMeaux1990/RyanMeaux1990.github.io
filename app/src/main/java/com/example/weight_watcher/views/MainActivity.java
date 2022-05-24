@@ -6,7 +6,10 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -15,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.weight_watcher.Controllers.Database.Users_Database_Controller;
 import com.example.weight_watcher.Controllers.Database.Weight_Database_Controller;
+import com.example.weight_watcher.Model.Database.Cursors.Users_Database_Results;
 import com.example.weight_watcher.Model.Notification.Notifications;
 import com.example.weight_watcher.Model.User.User;
 import com.example.weight_watcher.R;
@@ -42,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         weightDatabase = new Weight_Database_Controller(getApplicationContext());
         usersDatabase = new Users_Database_Controller(getApplicationContext());
 
+
         thisPage = this;
 
     }
@@ -68,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
             //Checks the database to see if the user is Authenticated
 
             Boolean isAuthenticatedUser = usersDatabase.checkAuthentication(email,password);
-
+            usersDatabase.findUsersPhoneNumber(email);
             //If the User is authenticated adds the user to the Shared preferences and sends you to the page
             if(isAuthenticatedUser == true) {
 

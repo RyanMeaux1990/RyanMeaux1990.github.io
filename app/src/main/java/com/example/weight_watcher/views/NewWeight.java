@@ -45,7 +45,7 @@ public class NewWeight extends AppCompatActivity {
 
         users_database_controller.findAuthenticatedUser();
         weightDatabase.getUser();
-        currentUser = new User(users_database_controller.results.firstName,users_database_controller.results.lastName,users_database_controller.results.email,users_database_controller.results.password,weightDatabase.results.currentWeight,weightDatabase.results.goalWeight);
+        currentUser = new User(users_database_controller.results.firstName,users_database_controller.results.lastName,users_database_controller.results.email,users_database_controller.results.password,weightDatabase.results.currentWeight,weightDatabase.results.goalWeight,users_database_controller.results.phoneNumber);
 
     }
 

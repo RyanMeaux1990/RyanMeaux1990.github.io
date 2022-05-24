@@ -13,6 +13,8 @@ import com.example.weight_watcher.Model.Database.Users;
 import com.example.weight_watcher.Model.User.User;
 import com.example.weight_watcher.R;
 
+import java.time.format.ResolverStyle;
+
 public class Users_Database_Controller {
     public Users usersDatabase;
     public SQLiteDatabase writable;
@@ -23,6 +25,7 @@ public class Users_Database_Controller {
     private Context pageContext;
     public String email;
     public String currentUser;
+    public String phoneNumber;
 
     public Users_Database_Controller(Context context){
         usersDatabase = new Users(context);
@@ -42,13 +45,13 @@ public class Users_Database_Controller {
         values.put(usersDatabase.scheme.COL_LASTNAME, currentUser.lastName);
         values.put(usersDatabase.scheme.COL_EMAIL, currentUser.userCredentials.username);
         values.put(usersDatabase.scheme.COL_PASSWORD, currentUser.userCredentials.password);
-
+        values.put(usersDatabase.scheme.COL_PHONE_NUMBER,currentUser.phoneNumber);
         long newUserId = writable.insert(usersDatabase.scheme.TABLE_NAME,null,values);
         return newUserId;
     }
 
     public Boolean checkAuthentication(String userName, String password) {
-        Cursor cursor = writable.rawQuery("Select * from application_users where email = ? and password =?", new String[]{userName, password});
+        Cursor cursor = writable.rawQuery("Select * from "+ usersDatabase.scheme.TABLE_NAME +" where email = ? and password =?", new String[]{userName, password});
         if (cursor.getCount() > 0) {
             cursor.close();
             return true;
@@ -60,7 +63,8 @@ public class Users_Database_Controller {
     }
 
     public Boolean checkForUserInDatabase(String userName){
-        Cursor cursor = writable.rawQuery("Select * from application_users where email = ?", new String[] {userName});
+        Cursor cursor = writable.rawQuery("Select * from "+ usersDatabase.scheme.TABLE_NAME + " where email = ?", new String[] {userName});
+
         if(cursor.getCount() > 0){
             cursor.close();
             return true;
@@ -71,18 +75,30 @@ public class Users_Database_Controller {
 
     }
 
-    public void findAuthenticatedUser(){
+    public Users_Database_Results findAuthenticatedUser(){
         Log.v(this.email,"Find user");
 
         try {
-            Cursor cursor = writable.rawQuery("Select * from application_users where email = ?", new String[] {this.email});
+            Cursor cursor = writable.rawQuery("Select * from "+ usersDatabase.scheme.TABLE_NAME +" where email = ?", new String[] {this.email});
             results = new Users_Database_Results(cursor);
             cursor.close();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
 
+        return results;
+    }
 
+    public void findUsersPhoneNumber(String theEmail){
+
+        try {
+            Cursor cursor = writable.rawQuery("Select * from "+ usersDatabase.scheme.TABLE_NAME +" where email = ?", new String[] {theEmail});
+            phoneNumber = cursor.getString(cursor.getColumnIndex("phone_number"));
+            cursor.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

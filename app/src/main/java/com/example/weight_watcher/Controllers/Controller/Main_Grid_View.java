@@ -73,7 +73,14 @@ public class Main_Grid_View {
         this.gridDisplay.usersDb.findAuthenticatedUser();
 
         this.gridDisplay.weightDatabase.getUser();
-        this.currentUser = new User(this.gridDisplay.usersDb.results.firstName, this.gridDisplay.usersDb.results.lastName, this.gridDisplay.usersDb.results.email, this.gridDisplay.usersDb.results.password, String.valueOf(this.gridDisplay.weightDatabase.results.currentWeight), this.gridDisplay.weightDatabase.results.goalWeight);
+
+        this.currentUser = new User(this.gridDisplay.usersDb.results.firstName,
+                this.gridDisplay.usersDb.results.lastName,
+                this.gridDisplay.usersDb.results.email,
+                this.gridDisplay.usersDb.results.password,
+                String.valueOf(this.gridDisplay.weightDatabase.results.currentWeight),
+                Double.valueOf(this.gridDisplay.weightDatabase.results.goalWeight),
+                this.gridDisplay.usersDb.results.phoneNumber);
 
     }
 

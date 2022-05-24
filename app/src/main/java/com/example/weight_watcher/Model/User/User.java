@@ -7,10 +7,11 @@ public class User {
     public Credential userCredentials;
     public String lastName;
     public Weight weight;
-
-    public User(String fName, String lName, String Uemail, String Upassword, String currentWeight, Double UgoalWeight) {
+    public String phoneNumber;
+    public User(String fName, String lName, String Uemail, String Upassword, String currentWeight, Double UgoalWeight, String PhoneNumber) {
         firstName = fName;
         lastName = lName;
+        phoneNumber = PhoneNumber;
         userCredentials = new Credential(Uemail, Upassword);
         weight = new Weight(currentWeight, currentWeight, UgoalWeight);
     }

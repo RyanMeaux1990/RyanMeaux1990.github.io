@@ -8,6 +8,7 @@ public class Users_Database_Results {
     public String lastName;
     public String email;
     public String password;
+    public String phoneNumber;
 
 
 
@@ -25,6 +26,7 @@ public class Users_Database_Results {
             lastName = cursor.getString(2);
             email = cursor.getString(3);
             password = cursor.getString(4);
+            phoneNumber = cursor.getString(5);
 
         }else {
             cursor.close();

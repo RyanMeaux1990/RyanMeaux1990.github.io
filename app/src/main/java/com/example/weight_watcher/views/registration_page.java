@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -23,6 +24,7 @@ public class registration_page extends AppCompatActivity {
     TextView confirmPassword;
     TextView currentWeight;
     TextView goalWeight;
+    TextView phone;
     String firstNameText;
     String lastNameText;
     String emailText;
@@ -30,6 +32,7 @@ public class registration_page extends AppCompatActivity {
     String confrimedPasswordText;
     Double currentWeightText;
     Double goalWeightText;
+    String phoneNumberText;
     Weight_Database_Controller weightDb;
     Users_Database_Controller users_database_controller;
     Button cancelButton;
@@ -56,6 +59,7 @@ public class registration_page extends AppCompatActivity {
         lastName = (TextView) findViewById(R.id.register_last_name);
         email = (TextView) findViewById(R.id.register_email);
         password = (TextView) findViewById(R.id.register_password);
+        phone = (TextView)findViewById(R.id.phone_number);
         confirmPassword = (TextView) findViewById(R.id.confirm_password);
         currentWeight = (TextView) findViewById(R.id.registration_current_weight);
         goalWeight = (TextView) findViewById(R.id.registration_goal_weight);
@@ -66,6 +70,7 @@ public class registration_page extends AppCompatActivity {
         confrimedPasswordText = confirmPassword.getText().toString();
         currentWeightText = Double.valueOf(currentWeight.getText().toString());
         goalWeightText = Double.valueOf(goalWeight.getText().toString());
+        phoneNumberText = phone.getText().toString();
 
 
 
@@ -87,7 +92,7 @@ public class registration_page extends AppCompatActivity {
     public void registerNewUser(){
         setTextViewNumbers();
 
-        User currentUser = new User(firstNameText,lastNameText,emailText,passwordText,String.valueOf(currentWeightText),goalWeightText);
+        User currentUser = new User(firstNameText,lastNameText,emailText,passwordText,String.valueOf(currentWeightText),Double.valueOf(goalWeightText),phoneNumberText);
 
         Boolean isUserInDb = users_database_controller.checkForUserInDatabase(currentUser.userCredentials.username);
 
