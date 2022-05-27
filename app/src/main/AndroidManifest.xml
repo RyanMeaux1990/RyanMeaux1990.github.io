@@ -17,6 +17,7 @@
             android:exported="false"/>
         <activity android:name=".views.NewWeight"/>
         <activity android:name=".views.Update_Database_Entry"/>
+        <activity android:name=".views.Two_Factor"/>
 
 
 

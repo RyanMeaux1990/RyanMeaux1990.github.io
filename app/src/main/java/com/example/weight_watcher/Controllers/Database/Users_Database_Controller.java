@@ -13,8 +13,6 @@ import com.example.weight_watcher.Model.Database.Users;
 import com.example.weight_watcher.Model.User.User;
 import com.example.weight_watcher.R;
 
-import java.time.format.ResolverStyle;
-
 public class Users_Database_Controller {
     public Users usersDatabase;
     public SQLiteDatabase writable;
@@ -90,15 +88,18 @@ public class Users_Database_Controller {
         return results;
     }
 
-    public void findUsersPhoneNumber(String theEmail){
+    public String findUsersPhoneNumber(String theEmail){
 
         try {
             Cursor cursor = writable.rawQuery("Select * from "+ usersDatabase.scheme.TABLE_NAME +" where email = ?", new String[] {theEmail});
-            phoneNumber = cursor.getString(cursor.getColumnIndex("phone_number"));
+            results = new Users_Database_Results(cursor);
+            phoneNumber = results.phoneNumber;
+            Log.v("Number",results.phoneNumber);
             cursor.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return phoneNumber;
     }
 
 }

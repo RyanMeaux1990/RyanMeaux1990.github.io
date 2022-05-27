@@ -6,8 +6,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,7 +16,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.weight_watcher.Controllers.Database.Users_Database_Controller;
 import com.example.weight_watcher.Controllers.Database.Weight_Database_Controller;
-import com.example.weight_watcher.Model.Database.Cursors.Users_Database_Results;
 import com.example.weight_watcher.Model.Notification.Notifications;
 import com.example.weight_watcher.Model.User.User;
 import com.example.weight_watcher.R;
@@ -77,15 +74,16 @@ public class MainActivity extends AppCompatActivity {
             //If the User is authenticated adds the user to the Shared preferences and sends you to the page
             if(isAuthenticatedUser == true) {
 
+                String phoneNumber = usersDatabase.findUsersPhoneNumber(email);
+                Log.v("Auth Number",phoneNumber);
                 SharedPreferences sp = getApplicationContext().getSharedPreferences(String.valueOf(R.string.userPreference), Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sp.edit();
                 editor.putString("User", email);
-                editor.commit();
 
 
-                Intent intent = new Intent(MainActivity.this, Grid_Display.class);
+                Intent twoFactorAuthentication = new Intent(MainActivity.this,Two_Factor.class);
 
-                startActivity(intent);
+                startActivity(twoFactorAuthentication);
             }
         }
     };

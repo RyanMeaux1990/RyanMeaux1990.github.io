@@ -21,7 +21,7 @@ public class Preferences {
     }
 
 
-    public String getString(String name, String value){
+    public String getString(String name){
       return this.sp.getString("User", null);
 
     }
