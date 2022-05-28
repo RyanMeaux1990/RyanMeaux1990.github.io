@@ -4,7 +4,6 @@ import static com.example.weight_watcher.R.layout.two_factor_page;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,11 +25,9 @@ public class Two_Factor extends AppCompatActivity {
         public void onClick(View v) {
             EditText textField = (EditText) findViewById(R.id.phoneNumberConfirmation);
             String enteredNumber = textField.getText().toString();
-            Log.v("Entered",enteredNumber);
-            Log.v(DatabasePhoneNumber,enteredNumber);
+
             Boolean isAuthenticated = CheckForPhoneComifrmation(enteredNumber,DatabasePhoneNumber);
 
-            Log.v("Auth",isAuthenticated.toString());
 
             if(isAuthenticated) {
                 Intent intent = new Intent(Two_Factor.this, Grid_Display.class);
@@ -50,7 +47,7 @@ public class Two_Factor extends AppCompatActivity {
         Preferences preferences = new Preferences(this.getApplicationContext());
         email = preferences.getString("email");
         DatabasePhoneNumber = GetPhoneNumber(email);
-        Log.v("DB#",DatabasePhoneNumber);
+
 
 
     }

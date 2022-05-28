@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridView;
@@ -17,7 +16,7 @@ import com.example.weight_watcher.Model.Toasts.App_Toasts.App_Toast;
 import com.example.weight_watcher.Model.User.User;
 import com.example.weight_watcher.R;
 import com.example.weight_watcher.views.Grid_Display;
-import com.example.weight_watcher.views.NewWeight;
+import com.example.weight_watcher.views.Measurement_View;
 import com.example.weight_watcher.views.Update_Database_Entry;
 
 public class Main_Grid_View {
@@ -51,8 +50,9 @@ public class Main_Grid_View {
     public void setEmail() {
         this.email = this.gridDisplay.usersDb.email;
 
-    }
 
+    }
+    //Sets the grid adapter for the main page
     public void setAdapter() {
 
         this.adapter = gridDisplay.adapter;
@@ -61,14 +61,14 @@ public class Main_Grid_View {
 
 
     }
-
+//Returns all the users weights
     public void getAllGridRows() {
         Notifications notifications = new Notifications(gridDisplay.activity);
         this.rows = this.gridDisplay.weightDatabase.getAllUserWeights(email);
 
 
     }
-
+// Finds the authenticated user in the database
     public void findAuthenticatedUser() {
         this.gridDisplay.usersDb.findAuthenticatedUser();
 
@@ -84,13 +84,14 @@ public class Main_Grid_View {
 
     }
 
+    // Sets all of the UI Values on the Main Page
     public void setUIValues() {
 
         Double current = Double.valueOf(this.currentUser.weight.currentWeight);
         Double goal = this.currentUser.weight.goalWeight;
 
         Notifications notifications = new Notifications(gridDisplay.activity);
-        Log.v(String.valueOf(notifications.hasFilePermissions()),"Access");
+
 
         poundsLeft = current - goal;
 
@@ -111,6 +112,7 @@ public class Main_Grid_View {
 
     }
 
+//Takes the user from the main page to edit and or delete a database entry
     public View.OnClickListener toEditAndDelete = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -130,17 +132,14 @@ public class Main_Grid_View {
         }
     };
 
+    //Takes the user from the main page when they click the floating button to the new measurement sheet
     public View.OnClickListener toAddNewWeight = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(gridDisplay, NewWeight.class);
+            Intent intent = new Intent(gridDisplay, Measurement_View.class);
             gridDisplay.startActivity(intent);
 
 
         }
-
-
     };
-
-
 }

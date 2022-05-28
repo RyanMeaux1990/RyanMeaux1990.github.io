@@ -44,6 +44,7 @@ public class Users_Database_Controller {
         values.put(usersDatabase.scheme.COL_EMAIL, currentUser.userCredentials.username);
         values.put(usersDatabase.scheme.COL_PASSWORD, currentUser.userCredentials.password);
         values.put(usersDatabase.scheme.COL_PHONE_NUMBER,currentUser.phoneNumber);
+
         long newUserId = writable.insert(usersDatabase.scheme.TABLE_NAME,null,values);
         return newUserId;
     }
@@ -62,7 +63,7 @@ public class Users_Database_Controller {
 
     public Boolean checkForUserInDatabase(String userName){
         Cursor cursor = writable.rawQuery("Select * from "+ usersDatabase.scheme.TABLE_NAME + " where email = ?", new String[] {userName});
-
+        Log.v("USer", cursor.getColumnName(3));
         if(cursor.getCount() > 0){
             cursor.close();
             return true;
@@ -74,7 +75,7 @@ public class Users_Database_Controller {
     }
 
     public Users_Database_Results findAuthenticatedUser(){
-        Log.v(this.email,"Find user");
+
 
         try {
             Cursor cursor = writable.rawQuery("Select * from "+ usersDatabase.scheme.TABLE_NAME +" where email = ?", new String[] {this.email});
@@ -101,5 +102,6 @@ public class Users_Database_Controller {
         }
         return phoneNumber;
     }
+
 
 }

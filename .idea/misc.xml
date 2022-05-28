@@ -17,7 +17,7 @@
         <entry key="app/src/main/res/layout/grid_cells.xml" value="0.18969168540974965" />
         <entry key="app/src/main/res/layout/grid_view_cells.xml" value="0.33870960484946133" />
         <entry key="app/src/main/res/layout/grid_views.xml" value="0.2213268533753779" />
-        <entry key="app/src/main/res/layout/home_page.xml" value="0.13711652484879042" />
+        <entry key="app/src/main/res/layout/home_page.xml" value="0.20430555072769668" />
         <entry key="app/src/main/res/layout/login_page.xml" value="0.13728470111448834" />
         <entry key="app/src/main/res/layout/main_activity.xml" value="0.22692964247448194" />
         <entry key="app/src/main/res/layout/main_page.xml" value="0.1" />
@@ -27,7 +27,7 @@
         <entry key="app/src/main/res/layout/table_headers.xml" value="0.1863799283154122" />
         <entry key="app/src/main/res/layout/table_view.xml" value="0.1421875" />
         <entry key="app/src/main/res/layout/two_factor_page.xml" value="0.18956298828125" />
-        <entry key="app/src/main/res/layout/user_data_inputs.xml" value="0.28938140869140627" />
+        <entry key="app/src/main/res/layout/user_data_inputs.xml" value="0.23583831787109394" />
         <entry key="app/src/main/res/layout/weight_grid_view_cells.xml" value="0.1" />
       </map>
     </option>

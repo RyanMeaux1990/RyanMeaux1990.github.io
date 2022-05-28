@@ -11,5 +11,14 @@
     <string name="channel_name">notification</string>
     <string name="channel_description">weight loss</string>
     <string name="enter_registered_phone_number">Enter registered phone number</string>
+    <string name="measurements">Measurements</string>
+    <string name="waist">Waist</string>
+    <string name="chest">Chest</string>
+    <string name="bicep">Bicep</string>
+    <string name="neck">Neck</string>
+    <string name="quadriceps">Quadriceps</string>
+    <string name="calves">Calves</string>
+    <string name="weight">Weight</string>
+    <string name="s">submit</string>
 
 </resources>

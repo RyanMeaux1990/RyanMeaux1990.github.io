@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.weight_watcher.Controllers.Database.Users_Database_Controller;
 import com.example.weight_watcher.Controllers.Database.Weight_Database_Controller;
+import com.example.weight_watcher.Model.Measurements.Measurements;
 import com.example.weight_watcher.Model.User.User;
 import com.example.weight_watcher.R;
 
@@ -93,7 +93,8 @@ public class registration_page extends AppCompatActivity {
         setTextViewNumbers();
 
         User currentUser = new User(firstNameText,lastNameText,emailText,passwordText,String.valueOf(currentWeightText),Double.valueOf(goalWeightText),phoneNumberText);
-
+        Measurements defaultMeasurements = new Measurements();
+        defaultMeasurements.weight = Double.parseDouble(currentUser.weight.currentWeight);
         Boolean isUserInDb = users_database_controller.checkForUserInDatabase(currentUser.userCredentials.username);
 
         if(isUserInDb == false) {
@@ -101,7 +102,7 @@ public class registration_page extends AppCompatActivity {
             sharedPref.edit().putString("User",firstNameText).commit();
 
             long newUserId = users_database_controller.addNewUserToDataBase(currentUser);
-            long weightDBID = weightDb.addNewUser(currentUser);
+            long weightDBID = weightDb.addNewUser(currentUser,defaultMeasurements);
 
         }
 

@@ -42,7 +42,6 @@ public class Users extends SQLiteOpenHelper {
         db.execSQL("drop table if exists " + scheme.TABLE_NAME);
         onCreate(db);
     }
-
     public void addNewColumn(SQLiteDatabase database){
         Log.v("On Upgrade", "On Upgrade");
         database.execSQL("ALTER TABLE" + scheme.TABLE_NAME +" ADD COLUMN phone_number");

@@ -35,15 +35,16 @@ public class MainActivity extends AppCompatActivity {
         final Integer logInPageId = login_page;
         setContentView(logInPageId);
 
+
         Button registerButton = (Button) findViewById(R.id.register_button);
         registerButton.setOnClickListener(toRegisterPage);
         Button submitLogin = (Button) findViewById(R.id.login_submit_button);
         submitLogin.setOnClickListener(toMainPage);
 
         weightDatabase = new Weight_Database_Controller(getApplicationContext());
+        weightDatabase.getUsersWeights("mo");
+
         usersDatabase = new Users_Database_Controller(getApplicationContext());
-
-
         thisPage = this;
 
     }
@@ -71,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
             Boolean isAuthenticatedUser = usersDatabase.checkAuthentication(email,password);
             usersDatabase.findUsersPhoneNumber(email);
+
             //If the User is authenticated adds the user to the Shared preferences and sends you to the page
             if(isAuthenticatedUser == true) {
 
@@ -78,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.v("Auth Number",phoneNumber);
                 SharedPreferences sp = getApplicationContext().getSharedPreferences(String.valueOf(R.string.userPreference), Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sp.edit();
+                editor.apply();
                 editor.putString("User", email);
 
 
