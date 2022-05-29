@@ -56,14 +56,6 @@ public class User_Input {
    //Gets all Measurements in the Text Box's
    public void GetMeasurmentText(){
        this.measurement_view.setValues();
-       /*
-       Double chest = Double.valueOf(String.valueOf(measurement_view.chestText));
-       Double neck = Double.valueOf(String.valueOf(measurement_view.neckText));
-       Double bicep = Double.valueOf(String.valueOf(measurement_view.bicepText));
-       Double waist = Double.valueOf(String.valueOf(measurement_view.waistText));
-       Double leg = Double.valueOf(String.valueOf(measurement_view.legText));
-       weight = Double.valueOf(String.valueOf(measurement_view.weightText));
-*/
 
    }
 

@@ -58,7 +58,7 @@ public class Weight_Database_Controller {
         newWeightContent.put(scheme.COL_initialWeight,currentUser.weight.initialWeight);
         newWeightContent.put(scheme.COL_dateWeighed,timeStamp);
         newWeightContent.put(scheme.COL_goal_weight, currentUser.weight.goalWeight);
-        newWeightContent.put(scheme.COL_current_weight,currentUser.weight.currentWeight);
+        newWeightContent.put(scheme.COL_current_weight,measurements.weight.currentWeight);
         newWeightContent.put(scheme.COL_WEIGHTCHANGE,change);
         newWeightContent.put(scheme.COL_NECK_MEASUREMENT,measurements.neck);
         newWeightContent.put(scheme.COL_BICEP_MEASUREMENT,measurements.bicep);
@@ -155,7 +155,7 @@ try {
         int id = newCursor.getPosition();
         String date = newCursor.getString(1);
         String weight = newCursor.getString(3);
-        Double goal = newCursor.getDouble(4);
+        Double goal = newCursor.getDouble(5);
         Row newRow = new Row(id,user,weight,goal,date);
         rows[i] = newRow;
 
