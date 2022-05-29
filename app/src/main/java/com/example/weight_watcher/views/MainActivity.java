@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
         submitLogin.setOnClickListener(toMainPage);
 
         weightDatabase = new Weight_Database_Controller(getApplicationContext());
-        weightDatabase.getUsersWeights("mo");
 
         usersDatabase = new Users_Database_Controller(getApplicationContext());
         thisPage = this;
@@ -77,11 +76,13 @@ public class MainActivity extends AppCompatActivity {
             if(isAuthenticatedUser == true) {
 
                 String phoneNumber = usersDatabase.findUsersPhoneNumber(email);
-                Log.v("Auth Number",phoneNumber);
                 SharedPreferences sp = getApplicationContext().getSharedPreferences(String.valueOf(R.string.userPreference), Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sp.edit();
-                editor.apply();
                 editor.putString("User", email);
+                editor.apply();
+                String emailCurrentlyInPref = sp.getString("User","");
+                Log.v("Email Currently In Pref",emailCurrentlyInPref);
+
 
 
                 Intent twoFactorAuthentication = new Intent(MainActivity.this,Two_Factor.class);

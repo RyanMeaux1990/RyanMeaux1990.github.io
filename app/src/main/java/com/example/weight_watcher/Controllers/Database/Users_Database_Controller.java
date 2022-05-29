@@ -102,6 +102,17 @@ public class Users_Database_Controller {
         }
         return phoneNumber;
     }
+    public Users_Database_Results GetUser(String Users_Email){
+        try {
+            Cursor cursor = writable.rawQuery("Select * from "+ usersDatabase.scheme.TABLE_NAME +" where email = ?", new String[] {Users_Email});
+            results = new Users_Database_Results(cursor);
+            cursor.close();
 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return results;
+    }
 
 }

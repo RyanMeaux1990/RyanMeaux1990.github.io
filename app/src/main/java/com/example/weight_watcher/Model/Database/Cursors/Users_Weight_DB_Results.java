@@ -20,8 +20,10 @@ public class Users_Weight_DB_Results {
 
     public Users_Weight_DB_Results(Cursor currentCursor){
         cursor = currentCursor;
+        if(cursor.isLast() == false){
+            cursor.moveToLast();
+        }
 
-        cursor.moveToLast();
         //getColHeaders();
          getResult();
 
@@ -55,6 +57,8 @@ public class Users_Weight_DB_Results {
         V/Columns: leg_measurement
         */
 
+
+
         date = cursor.getString(1);
         email = cursor.getString(2);
         currentWeight = cursor.getString(3);
@@ -65,7 +69,7 @@ public class Users_Weight_DB_Results {
         chest = cursor.getDouble(9);
         bicep = cursor.getDouble(8);
         waist = cursor.getDouble(10);
-        leg = cursor.getDouble(11);
+        //leg = cursor.getDouble(11);
 
     }
 

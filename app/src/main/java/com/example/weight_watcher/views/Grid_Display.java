@@ -59,7 +59,7 @@ public class Grid_Display extends AppCompatActivity {
         actionButton = (FloatingActionButton) findViewById(R.id.addNewWeight);
         usersDb = new Users_Database_Controller(getApplicationContext());
         weightDatabase = new Weight_Database_Controller(getApplicationContext());
-        weightDatabase.getAllUserWeights("mo");
+
 
         welcomeText = (TextView) findViewById(R.id.welcomeText);
         progressText = (TextView) findViewById(R.id.progressText);

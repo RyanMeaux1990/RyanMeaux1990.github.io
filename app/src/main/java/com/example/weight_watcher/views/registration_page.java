@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,6 +15,7 @@ import com.example.weight_watcher.Controllers.Database.Users_Database_Controller
 import com.example.weight_watcher.Controllers.Database.Weight_Database_Controller;
 import com.example.weight_watcher.Model.Measurements.Measurements;
 import com.example.weight_watcher.Model.User.User;
+import com.example.weight_watcher.Model.User.Weight;
 import com.example.weight_watcher.R;
 
 public class registration_page extends AppCompatActivity {
@@ -93,17 +95,21 @@ public class registration_page extends AppCompatActivity {
         setTextViewNumbers();
 
         User currentUser = new User(firstNameText,lastNameText,emailText,passwordText,String.valueOf(currentWeightText),Double.valueOf(goalWeightText),phoneNumberText);
-        Measurements defaultMeasurements = new Measurements();
-        defaultMeasurements.weight = Double.parseDouble(currentUser.weight.currentWeight);
+        Weight usersWeight = new Weight(String.valueOf(currentWeight),String.valueOf(currentWeight),Double.valueOf(goalWeightText));
+
+
+        Measurements userMeasurments = new Measurements(0.0,0.0,0.0,0.0,0.0,usersWeight);
+
         Boolean isUserInDb = users_database_controller.checkForUserInDatabase(currentUser.userCredentials.username);
 
         if(isUserInDb == false) {
             SharedPreferences sharedPref = getBaseContext().getSharedPreferences(String.valueOf(R.string.userPreference), Context.MODE_PRIVATE);
-            sharedPref.edit().putString("User",firstNameText).commit();
+            sharedPref.edit().putString("User",emailText).commit();
 
             long newUserId = users_database_controller.addNewUserToDataBase(currentUser);
-            long weightDBID = weightDb.addNewUser(currentUser,defaultMeasurements);
-
+            Log.w("UserID", String.valueOf(newUserId));
+            long weightDBID = weightDb.addNewUser(currentUser,userMeasurments);
+            Log.w("UserID", String.valueOf(weightDBID));
         }
 
 

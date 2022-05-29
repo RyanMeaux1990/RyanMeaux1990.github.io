@@ -7,90 +7,135 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="601dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Measurements"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="30dp" />
 
-        <EditText
-            android:id="@+id/WeightMeasurement"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/weight"
-            android:importantForAutofill="no"
-            android:inputType="numberDecimal"
-            android:minHeight="48dp" />
+            android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/NeckMeasurment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/neck"
-            android:importantForAutofill="no"
-            android:inputType="numberDecimal"
-            android:minHeight="48dp" />
+            <EditText
+                android:id="@+id/WeightMeasurement"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:hint="@string/weight"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp" />
+        </androidx.cardview.widget.CardView>
 
-        <EditText
-            android:id="@+id/BicepMeasurement"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/bicep"
-            android:importantForAutofill="no"
-            android:inputType="numberDecimal"
-            android:minHeight="48dp" />
+            android:layout_height="48dp">
 
-        <EditText
-            android:id="@+id/ChestMeasurment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/chest"
-            android:importantForAutofill="no"
-            android:inputType="numberDecimal"
-            android:minHeight="48dp" />
+            <EditText
+                android:id="@+id/NeckMeasurment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:hint="@string/neck"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp" />
+        </androidx.cardview.widget.CardView>
 
-        <EditText
-            android:id="@+id/WaistMeasurment"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/waist"
-            android:importantForAutofill="no"
-            android:inputType="numberDecimal"
-            android:minHeight="48dp" />
+            android:layout_height="48dp">
 
-        <EditText
-            android:id="@+id/QuadricepMeasurment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/quadriceps"
-            android:importantForAutofill="no"
-            android:inputType="numberDecimal"
-            android:minHeight="48dp" />
+            <EditText
+                android:id="@+id/BicepMeasurement"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:hint="@string/bicep"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp" />
+        </androidx.cardview.widget.CardView>
 
-        <EditText
-            android:id="@+id/CalfMeasurment"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/calves"
-            android:importantForAutofill="no"
-            android:inputType="numberDecimal"
-            android:minHeight="48dp" />
+            android:layout_height="48dp">
+
+            <EditText
+                android:id="@+id/ChestMeasurment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:hint="@string/chest"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <EditText
+                android:id="@+id/WaistMeasurment"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:ems="10"
+                android:hint="@string/waist"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <EditText
+                android:id="@+id/QuadricepMeasurment"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:ems="10"
+                android:hint="@string/quadriceps"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <EditText
+                android:id="@+id/CalfMeasurment"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:ems="10"
+                android:hint="@string/calves"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp" />
+        </androidx.cardview.widget.CardView>
 
         <Button
             android:id="@+id/SubmitMeasurements"
@@ -98,6 +143,13 @@
             android:layout_height="wrap_content"
             android:elevation="10dp"
             android:text="@string/s"
+            app:cornerRadius="30dp" />
+
+        <Button
+            android:id="@+id/CancelButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
             app:cornerRadius="30dp" />
 
     </LinearLayout>

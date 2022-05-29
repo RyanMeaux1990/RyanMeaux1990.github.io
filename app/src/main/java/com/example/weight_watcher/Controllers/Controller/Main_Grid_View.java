@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridView;
@@ -43,13 +44,15 @@ public class Main_Grid_View {
         this.gridView = gridDisplay.grid;
         this.gridDisplay.actionButton.setOnClickListener(toAddNewWeight);
         sharedPref = this.gridDisplay.getSharedPreferences(String.valueOf(R.string.userPreference), Context.MODE_PRIVATE);
-
+        this.email = sharedPref.getString("User","");
+        Log.v("Shared Preff Email", email);
 
     }
 
     public void setEmail() {
-        this.email = this.gridDisplay.usersDb.email;
 
+        this.email = this.gridDisplay.usersDb.email;
+        Log.v("Set email", email);
 
     }
     //Sets the grid adapter for the main page
@@ -79,15 +82,20 @@ public class Main_Grid_View {
                 this.gridDisplay.usersDb.results.email,
                 this.gridDisplay.usersDb.results.password,
                 String.valueOf(this.gridDisplay.weightDatabase.results.currentWeight),
-                Double.valueOf(this.gridDisplay.weightDatabase.results.goalWeight),
+                this.gridDisplay.weightDatabase.results.goalWeight,
                 this.gridDisplay.usersDb.results.phoneNumber);
+        Log.v("Current User Current Email",currentUser.userCredentials.username);
+        Log.v("Current User Current Weight",currentUser.weight.currentWeight);
+
 
     }
 
     // Sets all of the UI Values on the Main Page
     public void setUIValues() {
-
-        Double current = Double.valueOf(this.currentUser.weight.currentWeight);
+        Log.v("In Set UI Values","In ui values");
+        Float current = Float.valueOf(this.currentUser.weight.currentWeight);
+        Log.v("Current",String.valueOf(current));
+        Log.v("goal",String.valueOf(currentUser.weight.goalWeight));
         Double goal = this.currentUser.weight.goalWeight;
 
         Notifications notifications = new Notifications(gridDisplay.activity);
