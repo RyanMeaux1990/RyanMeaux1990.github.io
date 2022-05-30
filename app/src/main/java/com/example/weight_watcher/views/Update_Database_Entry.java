@@ -1,5 +1,7 @@
 package com.example.weight_watcher.views;
-
+/*
+DEFINES THE EDIT AND DELETE ENTRY VIEW
+ */
 import static java.lang.Double.valueOf;
 
 import android.content.Context;

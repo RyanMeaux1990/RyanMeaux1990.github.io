@@ -1,5 +1,7 @@
 package com.example.weight_watcher.views;
-
+/*
+SETS UP THE MAIN LOG IN PAGE
+ */
 import static com.example.weight_watcher.R.layout.login_page;
 
 import android.app.Activity;
@@ -47,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         thisPage = this;
 
     }
+
     // Takes you to the Registration Page
     public View.OnClickListener toRegisterPage = new View.OnClickListener() {
         @Override
@@ -57,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
     };
+
     //Takes you to the Main Page of the app
     public View.OnClickListener toMainPage = new View.OnClickListener() {
         @Override

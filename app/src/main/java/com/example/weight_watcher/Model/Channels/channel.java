@@ -1,5 +1,7 @@
 package com.example.weight_watcher.Model.Channels;
-
+/*
+Channel for the Notification
+ */
 import static androidx.core.content.ContextCompat.getSystemService;
 
 import android.app.NotificationChannel;

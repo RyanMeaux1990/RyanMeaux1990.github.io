@@ -38,7 +38,7 @@ public class Main_Grid_View {
     private Notifications notification;
     private Double poundsLeft;
 
-
+//Initializer
     public Main_Grid_View(Grid_Display display) {
         this.gridDisplay = display;
         this.gridView = gridDisplay.grid;
@@ -49,12 +49,14 @@ public class Main_Grid_View {
 
     }
 
+    //Set the email
     public void setEmail() {
 
         this.email = this.gridDisplay.usersDb.email;
         Log.v("Set email", email);
 
     }
+
     //Sets the grid adapter for the main page
     public void setAdapter() {
 
@@ -64,14 +66,16 @@ public class Main_Grid_View {
 
 
     }
-//Returns all the users weights
+
+    //Returns all the users weights and attaches them to the grid view
     public void getAllGridRows() {
         Notifications notifications = new Notifications(gridDisplay.activity);
         this.rows = this.gridDisplay.weightDatabase.getAllUserWeights(email);
 
 
     }
-// Finds the authenticated user in the database
+
+    // Finds the authenticated user in the database
     public void findAuthenticatedUser() {
         this.gridDisplay.usersDb.findAuthenticatedUser();
 
@@ -120,7 +124,7 @@ public class Main_Grid_View {
 
     }
 
-//Takes the user from the main page to edit and or delete a database entry
+    //Takes the user from the main page to edit and or delete a database entry
     public View.OnClickListener toEditAndDelete = new View.OnClickListener() {
         @Override
         public void onClick(View v) {

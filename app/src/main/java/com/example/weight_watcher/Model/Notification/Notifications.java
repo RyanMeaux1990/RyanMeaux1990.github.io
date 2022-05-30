@@ -1,5 +1,7 @@
 package com.example.weight_watcher.Model.Notification;
-
+/*
+DEFINES THE SUCCESS NOTIFICATION RECEIVED WHEN GOAL IS REACHED
+ */
 import android.Manifest;
 import android.app.Activity;
 import android.content.pm.PackageManager;
@@ -13,11 +15,6 @@ import androidx.core.content.ContextCompat;
 public class Notifications {
     Activity activity;
     private final int REQUEST_NOTIFICATION_CODE = 3;
-
-
-
-
-
 
     public Notifications(Activity activities) {
         this.activity = activities;
@@ -40,8 +37,7 @@ public class Notifications {
         return true;
     }
 
-    public void onRequestPermissionsResult(int requestCode,
-                                           String[] permissions, int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         switch (requestCode) {
             case REQUEST_NOTIFICATION_CODE: {
                 if (grantResults.length > 0

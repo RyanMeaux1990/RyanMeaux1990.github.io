@@ -1,5 +1,7 @@
 package com.example.weight_watcher.views;
-
+/*
+Defines the view of the 2FA Page
+ */
 import static com.example.weight_watcher.R.layout.two_factor_page;
 
 import android.content.Intent;
@@ -15,6 +17,7 @@ import com.example.weight_watcher.Model.SharedPref.Preferences;
 import com.example.weight_watcher.R;
 
 public class Two_Factor extends AppCompatActivity {
+
     private String email;
     private Users_Database_Controller Database;
     private String phoneNumber;
@@ -52,12 +55,13 @@ public class Two_Factor extends AppCompatActivity {
 
     }
 
-
+    //Returns the current users phone number
     private String GetPhoneNumber(String email){
         phoneNumber = Database.findUsersPhoneNumber(email);
         return phoneNumber;
     }
 
+    //Checks to ensure the entered number and the registered number match
     private Boolean CheckForPhoneComifrmation(String numberEntered, String numberFromDatabase){
 
         if(numberFromDatabase.equals(numberEntered)){

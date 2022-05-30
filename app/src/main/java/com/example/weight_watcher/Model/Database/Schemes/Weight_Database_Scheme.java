@@ -1,4 +1,7 @@
 package com.example.weight_watcher.Model.Database.Schemes;
+/*
+The scheme that defines the Weight Database
+ */
 
 public class Weight_Database_Scheme {
     public String COL_ID;

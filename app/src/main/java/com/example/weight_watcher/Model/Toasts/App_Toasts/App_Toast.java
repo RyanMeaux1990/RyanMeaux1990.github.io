@@ -1,5 +1,7 @@
 package com.example.weight_watcher.Model.Toasts.App_Toasts;
-
+/*
+CREATES THE TOASTS
+ */
 import android.content.Context;
 import android.widget.Toast;
 

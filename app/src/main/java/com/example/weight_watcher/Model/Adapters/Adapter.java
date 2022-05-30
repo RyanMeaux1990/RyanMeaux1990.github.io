@@ -1,5 +1,7 @@
 package com.example.weight_watcher.Model.Adapters;
-
+/*
+Adapter for Main Grid View
+ */
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;

@@ -1,5 +1,7 @@
 package com.example.weight_watcher.Model.Database.Cursors;
-
+/*
+Results that are returned from the Users Database
+ */
 import android.database.Cursor;
 
 public class Users_Database_Results {
@@ -11,13 +13,14 @@ public class Users_Database_Results {
     public String phoneNumber;
 
 
-
+    //Initializer
     public Users_Database_Results(Cursor currentCursor) {
         cursor = currentCursor;
         getLastUserEntry();
 
     }
 
+    //Gets the last entry
     public void getLastUserEntry() {
 
         if(cursor.isLast() == false) {

@@ -29,6 +29,7 @@ public class Measurement_View extends AppCompatActivity {
     public CharSequence waistText;
     public CharSequence legText;
     User_Input inputController;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +53,8 @@ public class Measurement_View extends AppCompatActivity {
 
 
     }
+
+    //Sets the values on the Measurement View Handler Class
     public void setValues(){
         inputController.weight = Double.valueOf(String.valueOf(weight.getText()));
         inputController.neck = Double.valueOf(String.valueOf(neck.getText()));

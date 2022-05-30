@@ -1,5 +1,7 @@
 package com.example.weight_watcher.Model.Database.Cursors;
-
+/*
+Returned results of the Weight Database
+ */
 import android.database.Cursor;
 
 public class Users_Weight_DB_Results {
@@ -17,7 +19,7 @@ public class Users_Weight_DB_Results {
     public Double waist;
     public Double leg;
 
-
+    //Initializer
     public Users_Weight_DB_Results(Cursor currentCursor){
         cursor = currentCursor;
         if(cursor.isLast() == false){
@@ -28,36 +30,26 @@ public class Users_Weight_DB_Results {
          getResult();
 
     }
+
+    //Returns an array of the colomn headers
     public String[] getColHeaders(){
         columnHeaders = cursor.getColumnNames();
         return columnHeaders;
     }
 
+    //Returns a col thats a string
     private String getStringColumn(int colIndex){
         return cursor.getString(colIndex);
 
     }
 
+    //Returns a col that is a double
     private Double getDoubleCol(int colIndex){
         return cursor.getDouble(colIndex);
     }
 
+    //Returns a full database Result
     public void getResult(){
-        /*
-        V/Columns: date_of_weight
-        V/Columns: email
-        V/Columns: current_weight
-        V/Columns: initial_weight
-        V/Columns: goal_weight
-        V/Columns: weight_change
-        V/Columns: neck_measurment
-        V/Columns: bicep_measurement
-        V/Columns: chest_measurement
-        V/Columns: waist_measurement
-        V/Columns: leg_measurement
-        */
-
-
 
         date = cursor.getString(1);
         email = cursor.getString(2);
@@ -69,12 +61,11 @@ public class Users_Weight_DB_Results {
         chest = cursor.getDouble(9);
         bicep = cursor.getDouble(8);
         waist = cursor.getDouble(10);
-        //leg = cursor.getDouble(11);
+        leg = cursor.getDouble(11);
 
     }
 
-
-
+    //Returns the last entry within the Cursor
     public void getLastUserEntry() {
 
         if(cursor.isLast() == false) {

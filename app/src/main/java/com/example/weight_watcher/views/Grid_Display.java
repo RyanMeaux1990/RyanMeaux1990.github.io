@@ -1,5 +1,10 @@
 package com.example.weight_watcher.views;
+/*
 
+SET UP THE MAIN GRID DISPLAY
+HANDLED BY THE MAIN GRID VIEW CONTROLLER CLASS
+
+ */
 import static com.example.weight_watcher.R.layout.home_page;
 
 import android.app.Activity;
@@ -80,6 +85,7 @@ public class Grid_Display extends AppCompatActivity {
     }
 
     //Creates the Notification once the user hits their goal
+
     public void createNotification(){
         this.channels = new channel(this);
 

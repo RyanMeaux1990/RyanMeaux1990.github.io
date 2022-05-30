@@ -25,6 +25,7 @@ public class Users_Database_Controller {
     public String currentUser;
     public String phoneNumber;
 
+    //Initializer
     public Users_Database_Controller(Context context){
         usersDatabase = new Users(context);
         usersDatabase.getReadDatabase();
@@ -38,6 +39,7 @@ public class Users_Database_Controller {
         email = sp.getString("User",null);
     }
 
+    //Adds a new user to the users database
     public long addNewUserToDataBase(User currentUser){
         values.put(usersDatabase.scheme.COL_FIRSTNAME, currentUser.firstName);
         values.put(usersDatabase.scheme.COL_LASTNAME, currentUser.lastName);
@@ -49,6 +51,7 @@ public class Users_Database_Controller {
         return newUserId;
     }
 
+    //Checks for authentication
     public Boolean checkAuthentication(String userName, String password) {
         Cursor cursor = writable.rawQuery("Select * from "+ usersDatabase.scheme.TABLE_NAME +" where email = ? and password =?", new String[]{userName, password});
         if (cursor.getCount() > 0) {
@@ -61,6 +64,7 @@ public class Users_Database_Controller {
 
     }
 
+    //Checks to see if a user in the db
     public Boolean checkForUserInDatabase(String userName){
         Cursor cursor = writable.rawQuery("Select * from "+ usersDatabase.scheme.TABLE_NAME + " where email = ?", new String[] {userName});
         Log.v("USer", cursor.getColumnName(3));
@@ -74,6 +78,7 @@ public class Users_Database_Controller {
 
     }
 
+    //Finds the Authenticated user in the db
     public Users_Database_Results findAuthenticatedUser(){
 
 
@@ -89,19 +94,21 @@ public class Users_Database_Controller {
         return results;
     }
 
+    //Finds the users phone number in the DB
     public String findUsersPhoneNumber(String theEmail){
 
         try {
             Cursor cursor = writable.rawQuery("Select * from "+ usersDatabase.scheme.TABLE_NAME +" where email = ?", new String[] {theEmail});
             results = new Users_Database_Results(cursor);
             phoneNumber = results.phoneNumber;
-            Log.v("Number",results.phoneNumber);
             cursor.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
         return phoneNumber;
     }
+
+    //Returns the User DB Results of the user
     public Users_Database_Results GetUser(String Users_Email){
         try {
             Cursor cursor = writable.rawQuery("Select * from "+ usersDatabase.scheme.TABLE_NAME +" where email = ?", new String[] {Users_Email});

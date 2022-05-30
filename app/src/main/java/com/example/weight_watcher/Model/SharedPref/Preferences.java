@@ -1,4 +1,5 @@
 package com.example.weight_watcher.Model.SharedPref;
+//DEFINES THE SHARED PREFERENCES USED
 
 import android.content.Context;
 import android.content.SharedPreferences;

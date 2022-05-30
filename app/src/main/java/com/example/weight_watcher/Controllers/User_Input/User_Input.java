@@ -53,7 +53,7 @@ public class User_Input {
        SendMeasurementsToDatabase();
    }
 
-   //Gets all Measurements in the Text Box's
+   //Gets all Measurements in the Text Box's on the page
    public void GetMeasurmentText(){
        this.measurement_view.setValues();
 

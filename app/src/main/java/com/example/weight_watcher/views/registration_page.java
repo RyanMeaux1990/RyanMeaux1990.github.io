@@ -1,5 +1,7 @@
 package com.example.weight_watcher.views;
-
+/*
+Defines the registration page
+ */
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -55,6 +57,7 @@ public class registration_page extends AppCompatActivity {
         weightDb = new Weight_Database_Controller(getApplicationContext());
         users_database_controller = new Users_Database_Controller(getApplicationContext());
     }
+
 //Sets the values of the registration pages text values
     public void setTextViewNumbers(){
         firstName = (TextView)findViewById(R.id.register_first_name);
@@ -78,6 +81,7 @@ public class registration_page extends AppCompatActivity {
 
 
     }
+
     //Checks to ensure the entered passwords match
     private Boolean checkPasswordMatches(){
 
@@ -90,6 +94,7 @@ public class registration_page extends AppCompatActivity {
         }
         return false;
     }
+
     //Registers a new user within the database and sets all the initial values
     public void registerNewUser(){
         setTextViewNumbers();
@@ -117,7 +122,8 @@ public class registration_page extends AppCompatActivity {
 
 
     }
-    //Takes you to the Login page
+
+    //Submit Button Takes you to the Login page
     private View.OnClickListener toLoginPage = new View.OnClickListener(){
         @Override
         public void onClick(View v){
@@ -129,7 +135,8 @@ public class registration_page extends AppCompatActivity {
 
         }
     };
-    //Takes you back to main page
+
+    //Cancel Button on click listener Takes you back to main page
     public View.OnClickListener toMainPage = new View.OnClickListener() {
         @Override
         public void onClick(View v) {

@@ -70,22 +70,8 @@ public class Weight_Database_Controller {
         Log.v("Insert #", String.valueOf(number));
         return number;
     }
+    //Adds a new user to the Weight Tracking DB and returns the number
     public Long addNewUser(User user, Measurements measurements){
-        /*
-        V/Columns: _id
-V/Columns: date_of_weight
-V/Columns: email
-V/Columns: current_weight
-V/Columns: initial_weight
-V/Columns: goal_weight
-V/Columns: weight_change
-V/Columns: neck_measurment
-V/Columns: bicep_measurement
-V/Columns: chest_measurement
-V/Columns: waist_measurement
-V/Columns: leg_measurement
-
-         */
         ContentValues content = new ContentValues();
         String timeStamp = new SimpleDateFormat("MMddyyyy").format(Calendar.getInstance().getTime());
         Double change = calculateWeightDifference(user.weight.goalWeight,Float.valueOf(user.weight.currentWeight));
@@ -108,6 +94,8 @@ V/Columns: leg_measurement
 
 
     }
+
+    //Returns True if user is in the Weight DB
     public Boolean checkForUserInDatabase(){
         Boolean isInDataBase = false;
         String newEmail = email;
@@ -127,6 +115,8 @@ V/Columns: leg_measurement
 
         return false;
     }
+
+    //Gets the user from the DB
     public void getUser() {
         Log.v("Cursor Get User","In GetUser WDBC");
         Cursor cursor = writable.rawQuery("Select * from " + scheme.TABLE_NAME + " where " + scheme.COL_currentUser + " = ?", new String[]{email});
@@ -140,6 +130,8 @@ V/Columns: leg_measurement
 
 
     }
+
+    //Returns all the db Results in an Array
     public Row[] getAllUserWeights(String email){
         Cursor newCursor = null;
 try {
@@ -172,6 +164,8 @@ try {
 
 
     }
+
+    //Deletes the selected row on the Grid View
     public int deleteSelectedRow(Row selectedRow){
         String date = selectedRow.date;
         String weight = String.valueOf(selectedRow.weightThatDay);
@@ -181,6 +175,8 @@ try {
         Integer deleted = writable.delete(scheme.TABLE_NAME,""+scheme.COL_dateWeighed+" = ? and "+scheme.COL_current_weight+" = ?",new String[]{date,weight});
         return deleted;
     }
+
+    //Updates A Row On the Grid View
     public long updateSelectedRow(Row selectedRow, String updatedDate, Double updatedWeight){
 
        values.put(scheme.COL_dateWeighed, updatedDate);
@@ -193,6 +189,7 @@ try {
         return updated;
     }
 
+    //Return the last entry
     public Users_Weight_DB_Results getLastEntry(String Useremail) {
         Cursor newCursor = writable.rawQuery("Select * from " + scheme.TABLE_NAME + " where " + scheme.COL_currentUser + " = ?", new String[]{Useremail});
         Users_Weight_DB_Results newResult = new Users_Weight_DB_Results(newCursor);
@@ -203,7 +200,7 @@ try {
         Cursor newCursor = writable.rawQuery("Select * from " + scheme.TABLE_NAME + " where " + scheme.COL_currentUser + " = ?", new String[]{Useremail});
         return newCursor;
     }
-
+    //Get all the users weights and return them as an array
     public void getUsersWeights(String email) {
 
         Cursor cursor = writable.rawQuery("Select * from " + scheme.TABLE_NAME + " where " + scheme.COL_currentUser + " = ?", new String[]{email});

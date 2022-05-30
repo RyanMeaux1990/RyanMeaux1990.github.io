@@ -1,5 +1,7 @@
 package com.example.weight_watcher.Model.GridViewRows;
-
+/*
+DEFINES THE ROWS WITHIN THE MAIN SCROLL VIEW
+ */
 public class Row {
     public int ID;
     public String user;

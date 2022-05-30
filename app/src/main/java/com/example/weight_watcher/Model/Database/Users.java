@@ -1,30 +1,36 @@
 package com.example.weight_watcher.Model.Database;
-
+/*
+The Users Database
+ */
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-
 import com.example.weight_watcher.Model.Database.Schemes.User_Database_Scheme;
 
 public class Users extends SQLiteOpenHelper {
+
     public User_Database_Scheme scheme = new User_Database_Scheme();
+
     public SQLiteDatabase writableDataBase;
+
     public SQLiteDatabase readableDatabase;
-    int currentVersion = 2;
-    int oldVersion = 1;
+
     public Users(Context context) {
 
         super(context, "the_app_db", null, 1);
 
     }
+
     public void getReadDatabase(){
 
         readableDatabase = getReadableDatabase();
     }
+
     public void getWritableDb(){
         writableDataBase = getWritableDatabase();
     }
+
     public void onCreate(SQLiteDatabase db) {
         Log.v("On Create", "On create");
 
@@ -37,16 +43,11 @@ public class Users extends SQLiteOpenHelper {
                 scheme.COL_PHONE_NUMBER + " TEXT)");
 
     }
+
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
         db.execSQL("drop table if exists " + scheme.TABLE_NAME);
         onCreate(db);
     }
-    public void addNewColumn(SQLiteDatabase database){
-        Log.v("On Upgrade", "On Upgrade");
-        database.execSQL("ALTER TABLE" + scheme.TABLE_NAME +" ADD COLUMN phone_number");
-    }
-
-
-
+    
 }

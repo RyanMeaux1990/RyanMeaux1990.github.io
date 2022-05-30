@@ -1,5 +1,7 @@
 package com.example.weight_watcher.Model.Database.Schemes;
-
+/*
+The scheme that defines the Users Database
+ */
 public class User_Database_Scheme {
     public Integer VERSION;
     public String TABLE_NAME = "the_app_db";
@@ -11,6 +13,7 @@ public class User_Database_Scheme {
     public String primary;
     public String TEXT;
     public String COL_PHONE_NUMBER;
+
 public User_Database_Scheme() {
 
 
