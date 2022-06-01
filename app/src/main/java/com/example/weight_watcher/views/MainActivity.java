@@ -2,6 +2,7 @@ package com.example.weight_watcher.views;
 /*
 SETS UP THE MAIN LOG IN PAGE
  */
+
 import static com.example.weight_watcher.R.layout.login_page;
 
 import android.app.Activity;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.anychart.AnyChart;
 import com.example.weight_watcher.Controllers.Database.Users_Database_Controller;
 import com.example.weight_watcher.Controllers.Database.Weight_Database_Controller;
 import com.example.weight_watcher.Model.Notification.Notifications;
@@ -28,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     public Weight_Database_Controller weightDatabase;
     public Notifications notifications;
     private Activity thisPage;
-
+    AnyChart anyChart = new AnyChart();
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
@@ -38,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(logInPageId);
 
 
-        Button registerButton = (Button) findViewById(R.id.register_button);
+        Button registerButton = findViewById(R.id.register_button);
         registerButton.setOnClickListener(toRegisterPage);
         Button submitLogin = (Button) findViewById(R.id.login_submit_button);
         submitLogin.setOnClickListener(toMainPage);
@@ -66,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
 
-            TextView usernameTextView = (TextView) findViewById(R.id.login_username);
+            TextView usernameTextView = findViewById(R.id.login_username);
             TextView usernamePassView = (TextView) findViewById(R.id.login_password);
             String email = usernameTextView.getText().toString();
             String password = usernamePassView.getText().toString();
