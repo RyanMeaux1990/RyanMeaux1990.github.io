@@ -49,6 +49,7 @@ public class Grid_Display extends AppCompatActivity {
     public Activity activity;
     public channel channels;
     public Preferences preferences;
+    public FloatingActionButton chartActionButton;
 
 
     public void onCreate(Bundle savedInstanceState) {
@@ -62,6 +63,10 @@ public class Grid_Display extends AppCompatActivity {
 
         intent = new Intent(Grid_Display.this, Update_Database_Entry.class);
         actionButton = (FloatingActionButton) findViewById(R.id.addNewWeight);
+
+        chartActionButton = (FloatingActionButton) findViewById(R.id.chartButton);
+
+
         usersDb = new Users_Database_Controller(getApplicationContext());
         weightDatabase = new Weight_Database_Controller(getApplicationContext());
 
@@ -105,6 +110,8 @@ public class Grid_Display extends AppCompatActivity {
         notificationManager.notify(NOTIFICATION_ID, notification);
     }
 
+    public void startActivityFromChild(Update_Database_Entry updates, Intent intent, int i) {
+    }
 }
 
 

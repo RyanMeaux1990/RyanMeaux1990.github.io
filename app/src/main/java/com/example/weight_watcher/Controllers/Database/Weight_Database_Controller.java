@@ -40,7 +40,7 @@ public class Weight_Database_Controller {
         scheme = new Weight_Database_Scheme();
         values = new ContentValues();
         sp = context.getSharedPreferences(String.valueOf(R.string.userPreference),Context.MODE_PRIVATE);
-        email = sp.getString("User","");
+
 
 
 
@@ -117,13 +117,12 @@ public class Weight_Database_Controller {
     }
 
     //Gets the user from the DB
-    public void getUser() {
-        Log.v("Cursor Get User","In GetUser WDBC");
+    public void getUser(String theEmail) {
+        Log.v("Cursor Get User",theEmail);
         Cursor cursor = writable.rawQuery("Select * from " + scheme.TABLE_NAME + " where " + scheme.COL_currentUser + " = ?", new String[]{email});
-
+        Log.v("Length",String.valueOf(cursor.getCount()));
         if(cursor.getCount() >0) {
             results = new Users_Weight_DB_Results(cursor);
-
         }
 
 
@@ -172,8 +171,7 @@ try {
         double goal = selectedRow.goalWeight;
 
 
-        Integer deleted = writable.delete(scheme.TABLE_NAME,""+scheme.COL_dateWeighed+" = ? and "+scheme.COL_current_weight+" = ?",new String[]{date,weight});
-        return deleted;
+        return writable.delete(scheme.TABLE_NAME,""+scheme.COL_dateWeighed+" = ? and "+scheme.COL_current_weight+" = ?",new String[]{date,weight});
     }
 
     //Updates A Row On the Grid View
@@ -182,23 +180,18 @@ try {
        values.put(scheme.COL_dateWeighed, updatedDate);
        values.put(scheme.COL_current_weight,updatedWeight);
 
-       int updated = writable.update(scheme.TABLE_NAME,values,""+scheme.COL_dateWeighed+" = ? and "+scheme.COL_current_weight+" = ?",new String[]{selectedRow.date, String.valueOf(selectedRow.weightThatDay)});
 
-
-
-        return updated;
+        return writable.update(scheme.TABLE_NAME,values,""+scheme.COL_dateWeighed+" = ? and "+scheme.COL_current_weight+" = ?",new String[]{selectedRow.date, String.valueOf(selectedRow.weightThatDay)});
     }
 
     //Return the last entry
     public Users_Weight_DB_Results getLastEntry(String Useremail) {
         Cursor newCursor = writable.rawQuery("Select * from " + scheme.TABLE_NAME + " where " + scheme.COL_currentUser + " = ?", new String[]{Useremail});
-        Users_Weight_DB_Results newResult = new Users_Weight_DB_Results(newCursor);
-        return newResult;
+        return new Users_Weight_DB_Results(newCursor);
     }
 
     public Cursor GetEntry(String Useremail) {
-        Cursor newCursor = writable.rawQuery("Select * from " + scheme.TABLE_NAME + " where " + scheme.COL_currentUser + " = ?", new String[]{Useremail});
-        return newCursor;
+        return writable.rawQuery("Select * from " + scheme.TABLE_NAME + " where " + scheme.COL_currentUser + " = ?", new String[]{Useremail});
     }
     //Get all the users weights and return them as an array
     public void getUsersWeights(String email) {
@@ -211,5 +204,13 @@ try {
 
         }
 
+
+    }
+
+    //Get all columns for spinner
+    public String[] getColumnHeaders(){
+        Cursor cursor = writable.rawQuery("Select * from " + scheme.TABLE_NAME + " where " + scheme.COL_currentUser + " = ?", new String[]{email});
+        cursor.close();
+        return cursor.getColumnNames();
     }
 }

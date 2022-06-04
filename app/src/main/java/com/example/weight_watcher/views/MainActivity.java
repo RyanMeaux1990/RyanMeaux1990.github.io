@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         super.onCreate(savedInstanceState);
-        final Integer logInPageId = login_page;
+        final int logInPageId = login_page;
         setContentView(logInPageId);
 
 
@@ -46,19 +46,17 @@ public class MainActivity extends AppCompatActivity {
         weightDatabase = new Weight_Database_Controller(getApplicationContext());
 
         usersDatabase = new Users_Database_Controller(getApplicationContext());
+
         thisPage = this;
 
     }
 
     // Takes you to the Registration Page
-    public View.OnClickListener toRegisterPage = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
+    public View.OnClickListener toRegisterPage = v -> {
 
-            Intent intent = new Intent(MainActivity.this, registration_page.class);
-            startActivity(intent);
+        Intent intent = new Intent(MainActivity.this, registration_page.class);
+        startActivity(intent);
 
-        }
     };
 
     //Takes you to the Main Page of the app
@@ -75,9 +73,11 @@ public class MainActivity extends AppCompatActivity {
 
             Boolean isAuthenticatedUser = usersDatabase.checkAuthentication(email,password);
             usersDatabase.findUsersPhoneNumber(email);
+            Boolean inDb = weightDatabase.checkForUserInDatabase();
 
+            Log.v("User In DB", inDb.toString());
             //If the User is authenticated adds the user to the Shared preferences and sends you to the page
-            if(isAuthenticatedUser == true) {
+            if(isAuthenticatedUser) {
 
                 String phoneNumber = usersDatabase.findUsersPhoneNumber(email);
                 SharedPreferences sp = getApplicationContext().getSharedPreferences(String.valueOf(R.string.userPreference), Context.MODE_PRIVATE);

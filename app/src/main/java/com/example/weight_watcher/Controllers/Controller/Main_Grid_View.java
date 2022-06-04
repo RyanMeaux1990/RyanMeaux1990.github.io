@@ -16,6 +16,7 @@ import com.example.weight_watcher.Model.Notification.Notifications;
 import com.example.weight_watcher.Model.Toasts.App_Toasts.App_Toast;
 import com.example.weight_watcher.Model.User.User;
 import com.example.weight_watcher.R;
+import com.example.weight_watcher.views.ChartView;
 import com.example.weight_watcher.views.Grid_Display;
 import com.example.weight_watcher.views.Measurement_View;
 import com.example.weight_watcher.views.Update_Database_Entry;
@@ -43,9 +44,9 @@ public class Main_Grid_View {
         this.gridDisplay = display;
         this.gridView = gridDisplay.grid;
         this.gridDisplay.actionButton.setOnClickListener(toAddNewWeight);
+        this.gridDisplay.chartActionButton.setOnClickListener(toChartView);
         sharedPref = this.gridDisplay.getSharedPreferences(String.valueOf(R.string.userPreference), Context.MODE_PRIVATE);
-        this.email = sharedPref.getString("User","");
-        Log.v("Shared Preff Email", email);
+
 
     }
 
@@ -53,7 +54,7 @@ public class Main_Grid_View {
     public void setEmail() {
 
         this.email = this.gridDisplay.usersDb.email;
-        Log.v("Set email", email);
+
 
     }
 
@@ -79,7 +80,7 @@ public class Main_Grid_View {
     public void findAuthenticatedUser() {
         this.gridDisplay.usersDb.findAuthenticatedUser();
 
-        this.gridDisplay.weightDatabase.getUser();
+        this.gridDisplay.weightDatabase.getUser(this.email);
 
         this.currentUser = new User(this.gridDisplay.usersDb.results.firstName,
                 this.gridDisplay.usersDb.results.lastName,
@@ -108,7 +109,7 @@ public class Main_Grid_View {
         poundsLeft = current - goal;
 
         this.gridDisplay.welcomeText.setText("Hello, " + currentUser.firstName);
-        this.gridDisplay.progressText.setText(poundsLeft+" left to go");
+        this.gridDisplay.progressText.setText(poundsLeft + " left to go");
 
         if (poundsLeft <= 0) {
             Activity thisPage = this.gridDisplay;
@@ -129,7 +130,7 @@ public class Main_Grid_View {
         @Override
         public void onClick(View v) {
             String tag = (String) v.getTag();
-            Integer rowNumber = Integer.valueOf(tag.substring(0, tag.length() - 1));
+            int rowNumber = Integer.valueOf(tag.substring(0, tag.length() - 1));
             String action = String.valueOf(tag.charAt(tag.length() - 1));
             Row selectedRow = rows[rowNumber];
 
@@ -154,4 +155,15 @@ public class Main_Grid_View {
 
         }
     };
+
+    //On click listener taking you to the chart view
+    public View.OnClickListener toChartView = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(gridDisplay, ChartView.class);
+            gridDisplay.startActivity(intent);
+        }
+    };
+
+
 }
