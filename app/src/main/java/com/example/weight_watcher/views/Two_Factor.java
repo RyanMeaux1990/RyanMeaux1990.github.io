@@ -48,7 +48,7 @@ public class Two_Factor extends AppCompatActivity {
         submitButton.setOnClickListener(toMainPage);
 
         Preferences preferences = new Preferences(this.getApplicationContext());
-        email = preferences.getString("email");
+        email = preferences.getString("User");
         DatabasePhoneNumber = GetPhoneNumber(email);
 
 

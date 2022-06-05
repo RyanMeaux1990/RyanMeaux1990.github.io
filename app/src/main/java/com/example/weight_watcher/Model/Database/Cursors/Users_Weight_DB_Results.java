@@ -25,10 +25,15 @@ public class Users_Weight_DB_Results {
         if(cursor.isLast() == false){
             cursor.moveToLast();
         }
-
-        //getColHeaders();
          getResult();
 
+    }
+
+    public Users_Weight_DB_Results(Cursor cursor, Boolean isLast){
+
+        if(!isLast){
+            getResult();
+        }
     }
 
     //Returns an array of the colomn headers

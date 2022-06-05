@@ -213,4 +213,21 @@ try {
         cursor.close();
         return cursor.getColumnNames();
     }
+
+    public Users_Weight_DB_Results[] GetChartData(String theUsersEmail){
+        Cursor cursor = writable.rawQuery("Select * from " + scheme.TABLE_NAME + " where " + scheme.COL_currentUser + " = ?", new String[]{theUsersEmail});
+        Users_Weight_DB_Results[] results = new Users_Weight_DB_Results[0];
+
+        for(int i = 0; i < cursor.getCount(); ++i){
+
+            if(!cursor.isAfterLast() == true){
+                results[i] = new Users_Weight_DB_Results(cursor,cursor.isLast());
+            }
+
+        }
+        return results;
+    }
+
+
+
 }

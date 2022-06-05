@@ -1,3 +1,4 @@
 
-rootProject.name = "Weight_Watcher"
-include ':app'
+    rootProject.name = "Weight_Watcher"
+    include ':app'
+

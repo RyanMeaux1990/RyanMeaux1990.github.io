@@ -31,5 +31,10 @@
       <option name="name" value="BintrayJCenter" />
       <option name="url" value="https://jcenter.bintray.com/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="0090a38b-52be-4cb2-81db-8b32835fb032" />
+      <option name="name" value="0090a38b-52be-4cb2-81db-8b32835fb032" />
+      <option name="url" value="https://github.AnyChart/AnyChart-Android &quot;0.0.3&quot;" />
+    </remote-repository>
   </component>
 </project>
