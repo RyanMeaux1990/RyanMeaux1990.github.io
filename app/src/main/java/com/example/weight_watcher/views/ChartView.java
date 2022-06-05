@@ -9,14 +9,13 @@ import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.anychart.AnyChart;
 import com.example.weight_watcher.Controllers.Database.Weight_Database_Controller;
 import com.example.weight_watcher.R;
 
 public class ChartView extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
 Weight_Database_Controller weightDB;
-AnyChart anyChart;
+
 
 
     @Override
