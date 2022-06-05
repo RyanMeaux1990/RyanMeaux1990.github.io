@@ -20,6 +20,8 @@
         <activity android:name=".views.Update_Database_Entry"/>
         <activity android:name=".views.Two_Factor"/>
         <activity android:name=".views.Measurement_View"/>
+        <activity android:name=".views.ChartView"/>
+
 
 
 

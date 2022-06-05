@@ -2,6 +2,7 @@ package com.example.weight_watcher.Model.Database.Cursors;
 /*
 Returned results of the Weight Database
  */
+
 import android.database.Cursor;
 
 public class Users_Weight_DB_Results {
@@ -29,9 +30,10 @@ public class Users_Weight_DB_Results {
 
     }
 
-    public Users_Weight_DB_Results(Cursor cursor, Boolean isLast){
+    public Users_Weight_DB_Results(Cursor the_cursor, Boolean isLast){
 
-        if(!isLast){
+        if(isLast == false){
+            cursor = the_cursor;
             getResult();
         }
     }

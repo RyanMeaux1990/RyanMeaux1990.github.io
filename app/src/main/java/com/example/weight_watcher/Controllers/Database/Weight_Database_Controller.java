@@ -96,13 +96,13 @@ public class Weight_Database_Controller {
     }
 
     //Returns True if user is in the Weight DB
-    public Boolean checkForUserInDatabase(){
+    public Boolean checkForUserInDatabase(String userEmail){
         Boolean isInDataBase = false;
-        String newEmail = email;
+
         try {
 
 
-            Cursor cursor = writable.rawQuery("Select * from " + scheme.TABLE_NAME + " where " + scheme.COL_currentUser + " = ?", new String[]{newEmail});
+            Cursor cursor = writable.rawQuery("Select * from " + scheme.TABLE_NAME + " where " + scheme.COL_currentUser + " = ?", new String[]{userEmail});
             if (cursor.getCount() > 0) {
                 isInDataBase = true;
             } else {
@@ -119,7 +119,7 @@ public class Weight_Database_Controller {
     //Gets the user from the DB
     public void getUser(String theEmail) {
         Log.v("Cursor Get User",theEmail);
-        Cursor cursor = writable.rawQuery("Select * from " + scheme.TABLE_NAME + " where " + scheme.COL_currentUser + " = ?", new String[]{email});
+        Cursor cursor = writable.rawQuery("Select * from " + scheme.TABLE_NAME + " where " + scheme.COL_currentUser + " = ?", new String[]{theEmail});
         Log.v("Length",String.valueOf(cursor.getCount()));
         if(cursor.getCount() >0) {
             results = new Users_Weight_DB_Results(cursor);
@@ -216,13 +216,13 @@ try {
 
     public Users_Weight_DB_Results[] GetChartData(String theUsersEmail){
         Cursor cursor = writable.rawQuery("Select * from " + scheme.TABLE_NAME + " where " + scheme.COL_currentUser + " = ?", new String[]{theUsersEmail});
-        Users_Weight_DB_Results[] results = new Users_Weight_DB_Results[0];
+        Users_Weight_DB_Results[] results = new Users_Weight_DB_Results[cursor.getCount()];
 
+        cursor.moveToFirst();
         for(int i = 0; i < cursor.getCount(); ++i){
 
-            if(!cursor.isAfterLast() == true){
                 results[i] = new Users_Weight_DB_Results(cursor,cursor.isLast());
-            }
+
 
         }
         return results;

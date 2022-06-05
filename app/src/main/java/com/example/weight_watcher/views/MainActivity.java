@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
             Boolean isAuthenticatedUser = usersDatabase.checkAuthentication(email,password);
             usersDatabase.findUsersPhoneNumber(email);
-            Boolean inDb = weightDatabase.checkForUserInDatabase();
+            Boolean inDb = weightDatabase.checkForUserInDatabase(email);
 
             Log.v("User In DB", inDb.toString());
             //If the User is authenticated adds the user to the Shared preferences and sends you to the page
