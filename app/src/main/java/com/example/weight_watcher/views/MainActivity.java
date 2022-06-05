@@ -75,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
             usersDatabase.findUsersPhoneNumber(email);
             Boolean inDb = weightDatabase.checkForUserInDatabase(email);
 
-            Log.v("User In DB", inDb.toString());
             //If the User is authenticated adds the user to the Shared preferences and sends you to the page
             if(isAuthenticatedUser) {
 
