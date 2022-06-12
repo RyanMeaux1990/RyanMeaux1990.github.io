@@ -14,8 +14,13 @@ Database’s are important because they provide a location to store and pull dat
 The Artifacts fit together and demonstrate my knowledge and skill within all of the following areas; improving software, improving data structures, improving databases, improving security, and using data mining. Each section of the required upgrades requires the use of the other pieces of the upgrades. For example, when updating the app to use a 2FA method, it required the updating of data structures to hold other required data, it also required the updating of the databases to add columns to tables, and the expansion of the UI for use.  
 
 ## Code Review
+
+https://m.youtube.com/watch?v=SLWc6VTsulM&feature=youtu.be
+
 ## Artifact One:
+
 ## Artifact Two:
+
 ## Artifact Three:
 
 
