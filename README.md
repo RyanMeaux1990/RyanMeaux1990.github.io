@@ -63,12 +63,14 @@ The artifact that I am submitting is called Weight Watcher, it is an app that tr
 5. Creating and updating User Interfaces.
 6. Adding app functionality and complexity. 
 
-​
-### Justification
-​The reason why I chose to include this artifact is because it was 100% created by me, and I think it is some of the best coding work that I have done. I believe that the entire app really does demonstrate my abilities, from the UI Design, to the simpleness of the app, and the use and design of the database.
-
+### Justification 
+​The reason why I chose to include this artifact is because it was 100% created by me, and I think it is some of the best coding work that I have done. I believe that the entire app really does demonstrate my abilities, from the UI Design, to the simpleness of the app, and the use and design of the database. The app was improved by adding in a form of a two step authentication, as well as adding in new data structures which will attach to the previous data structures, to enable data mining in the final piece of the project.
 ### Course Objectives
-​
+​For the first step I proposed to include the app by introducing a form of two factor authentication, and this week I finished implementing a two factor authentication system as well as included in new data structures.
 ### Reflection
-​For modifying the artifact I learned a few things. The main thing that I learned is that if your code is too difficult to understand, adding anything to it is almost impossible. I also learned that if you do not write good comments it will also be impossible to fully understand how everything will work. The challenge that I faced was adding a new column within the database.
+​For modifying the artifact I learned a few things. The main thing that I learned is that if your code is too difficult to understand, adding anything to it is almost impossible. I also learned that if you do not write good comments it will also be impossible to fully understand how everything will work. Lastly, I learned that if you do not have a really modular piece of software, adding anything to it is next to impossible. This week I continued to have difficulties extending the database but eventually ended up getting it.
+
+
+​
+
 
