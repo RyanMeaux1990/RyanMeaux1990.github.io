@@ -20,7 +20,7 @@ https://m.youtube.com/watch?v=SLWc6VTsulM&feature=youtu.be
 ## Artifact One: Engineering
 
 ### Description
-For Artificat One I chose to add onto the app that I developed from the ground up known as Weight Watcher. For this weeks enhancement, I decided to add a form of Two Factor Authentication. 
+The artifact that I am submitting is called Weight Watcher, it is an app that tracks the weight of a person, and once they get to their desired weight it will give them a notification. The app was created as part of a junior level class that I took.
 
 ### List of upgrades
 1. Updating SQL Table to include a column for users phone number. 
@@ -34,7 +34,41 @@ For Artificat One I chose to add onto the app that I developed from the ground u
 3. Updating and managing databases.
 4. Using, updating, and managing data structures.
 
-### Process
-For Artifact One the reason I chose to incorporate a form of Two Factor Authentication is to clearly demonstrate my ability to be able to create ideas to address security concerns. One of the biggest security concerns that exists currently is users sacrificing security for convenience, usually in the form of reusing the same password repeatedly. With Two Factor Authentication, an extra layer of security is given to the user that allows for the user to be able to easily move through the login process but would prove almost impossible for an individual with malicious intent to overcome. 
-When creating the Two factor Authentication, I was planning on incorporating the Vonage Two Factor Authenticator package, but was quick to realize that Vonage and most other Two Factor Authentication packages cost money, so I questioned what I could do, and I finally decided on using a phone number as another form of authentication, because we typically keep our phone numbers to ourselves and typically don't share it online, and it's something that most people have memorized. Once I had the solution to the problem, the first thing that I had to do was incorporate a new text box on the registration page, which lead to me having to extend both the database and the User Class to be able to incorporate the new variable.
-Once I had those extended, the next thing I had to create was a separate view where the two factor authentication would take place at, as well as creating a new method that would check to ensure the authentication worked properly. 
+​
+### Justification
+​The reason why I chose to include this artifact is because it was 100% created by me, and I think it is some of the best coding work that I have done. I believe that the entire app really does demonstrate my abilities, from the UI Design, to the simpleness of the app, and the use and design of the database. For this module the app was improved by adding in a form of a two step authentication.
+
+### Course Objectives
+​For the first step I proposed to include the app by introducing a form of two factor authentication, and this week I implemented a two factor authentication. I would like to be able to implement a two step authenticator API.
+
+### Reflection
+​For modifying the artifact I learned a few things. The main thing that I learned is that if your code is too difficult to understand, adding anything to it is almost impossible. I also learned that if you do not write good comments it will also be impossible to fully understand how everything will work. The challenge that I faced was adding a new column within the database.
+
+## Artifact Two: 
+
+### Description
+The artifact that I am submitting is called Weight Watcher, it is an app that tracks the weight of a person, and once they get to their desired weight it will give them a notification. The app was created as part of a junior level class that I took.
+
+### List of upgrades
+1. Updating SQL Table to include new columns to hold all data from the Measurements class. 
+2. Created a new class called Measurements. 
+3. Updated the User class to require an object of Measurements.
+4. Created A new view called UserInput that takes the users input from measurements they take. 
+5. Created new database functions to create/update/delete specific meaurement entries.   
+
+### Demonstrated Skills
+1. Demonstrated the ability to develop solutions to solve logic problems. 
+3. Updating and managing databases.
+4. Using, updating, and managing data structures.
+5. Creating and updating User Interfaces.
+6. Adding app functionality and complexity. 
+
+​
+### Justification
+​The reason why I chose to include this artifact is because it was 100% created by me, and I think it is some of the best coding work that I have done. I believe that the entire app really does demonstrate my abilities, from the UI Design, to the simpleness of the app, and the use and design of the database.
+
+### Course Objectives
+​
+### Reflection
+​For modifying the artifact I learned a few things. The main thing that I learned is that if your code is too difficult to understand, adding anything to it is almost impossible. I also learned that if you do not write good comments it will also be impossible to fully understand how everything will work. The challenge that I faced was adding a new column within the database.
+
