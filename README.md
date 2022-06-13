@@ -31,11 +31,13 @@ For Artificat One I chose to add onto the app that I developed from the ground u
 ### Demonstrated Skills
 1. Create and design creative solutions to address security flaws. 
 2. Demonstrate the ability to develop solutions to solve logic problems. 
+3. Updating and managing databases.
+4. Using, updating, and managing data structures.
 
 ### Justification And Success
 For Artifact One the reason I chose to incorporate a form of Two Factor Authentication is to clearly demonstrate my ability to be able to create ideas to address security concerns. One of the biggest security concerns that exists currently is users sacrificing security for convenience, usually in the form of reusing the same password repeatedly. With Two Factor Authentication, an extra layer of security is given to the user that allows for the user to be able to easily move through the login process but would prove almost impossible for an individual with malicious intent to overcome. 
 When creating the Two factor Authentication, I was planning on incorporating the Vonage Two Factor Authenticator package, but was quick to realize that Vonage and most other Two Factor Authentication packages cost money, so I questioned what I could do, and I finally decided on using a phone number as another form of authentication, because we typically keep our phone numbers to ourselves and typically don't share it online, and it's something that most people have memorized.
-In order to solve the problem of incorporating such a design, I had 
+In order to solve the problem of incorporating such a design, I had to first update the registration page in order to be able to capture a new users phone number, as well as create a new view where the user would be prompted to enter their phone number. Through the execution of these tasks one could easily come to the conclusion that 
 
 ## Artifact Two:
 
