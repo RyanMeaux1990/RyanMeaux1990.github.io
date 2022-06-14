@@ -34,15 +34,14 @@ The artifact that I am submitting is called Weight Watcher, it is an app that tr
 3. Updating and managing databases.
 4. Using, updating, and managing data structures.
 
-​
 ### Justification
-​The reason why I chose to include this artifact is because it was 100% created by me, and I think it is some of the best coding work that I have done. I believe that the entire app really does demonstrate my abilities, from the UI Design, to the simpleness of the app, and the use and design of the database. For this module the app was improved by adding in a form of a two step authentication.
+The reason why I chose to include this artifact is because it was 100% created by me, and I think it is some of the best coding work that I have done. I believe that the entire app really does demonstrate my abilities, from the UI Design, to the simpleness of the app, and the use and design of the database. For this module the app was improved by adding in a form of a two step authentication.
 
 ### Course Objectives
-​For the first step I proposed to include the app by introducing a form of two factor authentication, and this week I implemented a two factor authentication. I would like to be able to implement a two step authenticator API.
+For the first step I proposed to include the app by introducing a form of two factor authentication, and this week I implemented a two factor authentication. I would like to be able to implement a two step authenticator API.
 
 ### Reflection
-​For modifying the artifact I learned a few things. The main thing that I learned is that if your code is too difficult to understand, adding anything to it is almost impossible. I also learned that if you do not write good comments it will also be impossible to fully understand how everything will work. The challenge that I faced was adding a new column within the database.
+For modifying the artifact I learned a few things. The main thing that I learned is that if your code is too difficult to understand, adding anything to it is almost impossible. I also learned that if you do not write good comments it will also be impossible to fully understand how everything will work. The challenge that I faced was adding a new column within the database.
 
 ## Artifact Two: 
 
