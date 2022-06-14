@@ -64,13 +64,43 @@ The artifact that I am submitting is called Weight Watcher, it is an app that tr
 6. Adding app functionality and complexity. 
 
 ### Justification 
-​The reason why I chose to include this artifact is because it was 100% created by me, and I think it is some of the best coding work that I have done. I believe that the entire app really does demonstrate my abilities, from the UI Design, to the simpleness of the app, and the use and design of the database. The app was improved by adding in a form of a two step authentication, as well as adding in new data structures which will attach to the previous data structures, to enable data mining in the final piece of the project.
+The reason why I chose to include this artifact is because it was 100% created by me, and I think it is some of the best coding work that I have done. I believe that the entire app really does demonstrate my abilities, from the UI Design, to the simpleness of the app, and the use and design of the database. The app was improved by adding in a form of a two step authentication, as well as adding in new data structures which will attach to the previous data structures, to enable data mining in the final piece of the project.
+
 ### Course Objectives
-​For the first step I proposed to include the app by introducing a form of two factor authentication, and this week I finished implementing a two factor authentication system as well as included in new data structures.
+For the first step I proposed to include the app by introducing a form of two factor authentication, and this week I finished implementing a two factor authentication system as well as included in new data structures.
+
 ### Reflection
-​For modifying the artifact I learned a few things. The main thing that I learned is that if your code is too difficult to understand, adding anything to it is almost impossible. I also learned that if you do not write good comments it will also be impossible to fully understand how everything will work. Lastly, I learned that if you do not have a really modular piece of software, adding anything to it is next to impossible. This week I continued to have difficulties extending the database but eventually ended up getting it.
+For modifying the artifact I learned a few things. The main thing that I learned is that if your code is too difficult to understand, adding anything to it is almost impossible. I also learned that if you do not write good comments it will also be impossible to fully understand how everything will work. Lastly, I learned that if you do not have a really modular piece of software, adding anything to it is next to impossible. This week I continued to have difficulties extending the database but eventually ended up getting it.
 
+## Artifact Three:
 
-​
+### Description
+The artifact that I am submitting is called Weight Watcher, it is an app that tracks the weight of a person, and once they get to their desired weight it will give them a notification. The app was created as part of a junior level class that I took.
+
+### List of upgrades
+1. Added a new view to hold the chart.
+2. Incorporated AnyChart API.
+3. Connected the API to display data for data mining. 
+
+### Demonstrated Skills
+1. Demonstrated the ability to develop solutions to solve logic problems. 
+3. Incorporating an API.
+4. Using, updating, and managing data structures.
+5. Creating and updating User Interfaces.
+6. Adding app functionality and complexity. 
+7. Providing data mining functionality. 
+
+### Artifact Description
+The artifact that I am submitting is called Weight Watcher, it is an app that tracks the weight of a person, and once they get to their desired weight it will give them a notification. The app was created as part of a junior level class that I took. 
+
+### Justification
+The reason why I chose to include this artifact is because it was 100% created by me, and I think it is some of the best coding work that I have done. I believe that the entire app really does demonstrate my abilities, from the UI Design, to the simpleness of the app, and the use and design of the database. The app was improved by adding in a form of a two step authentication, as well as adding in new data structures which will attach to the previous data structures, to enable data mining in the final piece of the project.
+
+### Course Objectives
+For the first step I proposed to include the app by introducing a form of two factor authentication, and this week I finished implementing a two factor authentication system as well as included in new data structures. 
+
+### Reflection
+For modifying the artifact I learned a few things. The main thing that I learned is that if your code is too difficult to understand, adding anything to it is almost impossible. I also learned that if you do not write good comments it will also be impossible to fully understand how everything will work. Lastly, I learned that if you do not have a really modular piece of software, adding anything to it is next to impossible. This week I continued to have difficulties extending the database but eventually ended up getting it. For this week I struggled to use the Gradle system to incorporate the data mining package but ended up getting it.
+
 
 
