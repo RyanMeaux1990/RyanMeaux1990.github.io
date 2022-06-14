@@ -15,7 +15,7 @@ The Artifacts fit together and demonstrate my knowledge and skill within all of 
 
 ## Code Review
 
-https://m.youtube.com/watch?v=SLWc6VTsulM&feature=youtu.be
+[![Code Review](http://img.youtube.com/vi/SLWc6VTsulM/0.jpg)](https://m.youtube.com/watch?v=SLWc6VTsulM&feature=youtu.be)
 
 ## Artifact One: Engineering
 
