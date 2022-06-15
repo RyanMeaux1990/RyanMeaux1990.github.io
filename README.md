@@ -17,10 +17,13 @@ The Artifacts fit together and demonstrate my knowledge and skill within all of 
 
 [![Code Review](http://img.youtube.com/vi/SLWc6VTsulM/0.jpg)](https://m.youtube.com/watch?v=SLWc6VTsulM&feature=youtu.be)
 
-## Artifact One: Engineering
+## Artifact Description
+For all three the artifacts that I will be submitting come from an app that I created for my IT-365 class, known as Operating System Environments. The app that I created is called Weight Watcher. Originally, the app tracked the weight of a person, by the input the user puts in, and it allows the user to be able edit and delete any previous inputs, once the user gets to their desired weight, it will give them a notification. What my intentions are for this class, are to extend the app to be able to track body measurements, so the user's can do data mining on their own weights and body measurements.
 
-### Description
-The artifact that I am submitting is called Weight Watcher, it is an app that tracks the weight of a person, and once they get to their desired weight it will give them a notification. The app was created as part of a junior level class that I took.
+## Justification For Inclusion
+The reason I chose to include this one artifact for use in all three sections of this class is because it gives me the ability to showcase all of my abilities because I created the entire app from the ground up, from the UI design, to the database design and creation, to the combination and implementation of everything together. Because I am the creator of the entire thing this allows me the leverage to be able to add onto it in anyway that I see fit.
+
+## Artifact One: Engineering
 
 ### List of upgrades
 1. Updating SQL Table to include a column for users phone number. 
@@ -33,9 +36,6 @@ The artifact that I am submitting is called Weight Watcher, it is an app that tr
 2. Demonstrate the ability to develop solutions to solve logic problems. 
 3. Updating and managing databases.
 4. Using, updating, and managing data structures.
-
-### Justification
-The reason why I chose to include this artifact is because it was 100% created by me, and I think it is some of the best coding work that I have done. I believe that the entire app really does demonstrate my abilities, from the UI Design, to the simpleness of the app, and the use and design of the database. For this module the app was improved by adding in a form of a two step authentication.
 
 ### Course Objectives
 For the first step I proposed to include the app by introducing a form of two factor authentication, and this week I implemented a two factor authentication. I would like to be able to implement a two step authenticator API.
