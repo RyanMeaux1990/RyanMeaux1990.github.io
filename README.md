@@ -38,7 +38,7 @@ The reason I chose to include this one artifact for use in all three sections of
 4. Using, updating, and managing data structures.
 
 ### Course Objectives
-For the first step I proposed to include the app by introducing a form of two factor authentication, and this week I implemented a two factor authentication. I would like to be able to implement a two step authenticator API.
+For the first step I proposed to extend the app by creating and building a form of two factor authentication.
 
 ### Reflection
 For modifying the artifact I learned a few things. The main thing that I learned is that if your code is too difficult to understand, adding anything to it is almost impossible. I also learned that if you do not write good comments it will also be impossible to fully understand how everything will work. The challenge that I faced was adding a new column within the database.
