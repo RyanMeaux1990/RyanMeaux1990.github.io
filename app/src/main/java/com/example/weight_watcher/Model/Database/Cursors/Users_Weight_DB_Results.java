@@ -4,6 +4,7 @@ Returned results of the Weight Database
  */
 
 import android.database.Cursor;
+import android.util.Log;
 
 public class Users_Weight_DB_Results {
     private Cursor cursor;
@@ -26,6 +27,8 @@ public class Users_Weight_DB_Results {
         if(cursor.isLast() == false){
             cursor.moveToLast();
         }
+        int bis = currentCursor.getColumnIndex("biceps");
+
          getResult();
 
     }
@@ -69,6 +72,8 @@ public class Users_Weight_DB_Results {
         bicep = cursor.getDouble(8);
         waist = cursor.getDouble(10);
         leg = cursor.getDouble(11);
+
+        Log.v("Results",String.valueOf(initialWeight));
 
     }
 

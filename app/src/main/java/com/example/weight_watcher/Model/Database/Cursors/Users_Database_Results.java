@@ -19,7 +19,6 @@ public class Users_Database_Results {
         getLastUserEntry();
 
     }
-
     //Gets the last entry
     public void getLastUserEntry() {
 

@@ -15,8 +15,10 @@ import com.example.weight_watcher.Model.Measurements.Measurements;
 import com.example.weight_watcher.Model.User.User;
 import com.example.weight_watcher.R;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.TimeZone;
 
 public class Weight_Database_Controller {
     public User_Weight_Database weightDatabase;
@@ -31,6 +33,9 @@ public class Weight_Database_Controller {
     private String email;
     private SharedPreferences sp;
     Measurements default_measurements = new Measurements();
+    private Calendar calendar;
+    private String timeStamp;
+    DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
 
     public Weight_Database_Controller(Context context){
         weightDatabase = new User_Weight_Database(context);
@@ -40,7 +45,7 @@ public class Weight_Database_Controller {
         scheme = new Weight_Database_Scheme();
         values = new ContentValues();
         sp = context.getSharedPreferences(String.valueOf(R.string.userPreference),Context.MODE_PRIVATE);
-
+        calendar = Calendar.getInstance(TimeZone.getTimeZone("Central"));
 
 
 
@@ -52,11 +57,16 @@ public class Weight_Database_Controller {
     }
     public long addNewWeight(User currentUser, Measurements measurements){
         ContentValues newWeightContent = new ContentValues();
-        String timeStamp = new SimpleDateFormat("MMddyyyy").format(Calendar.getInstance().getTime());
-        Float change = Float.valueOf(currentUser.weight.initialWeight) - Float.valueOf(String.valueOf(currentUser.weight.currentWeight));
+
+        timeStamp = String.valueOf(dateFormat.format(calendar.getTime()));
+        Double currentUserWeight = Double.valueOf(measurements.weight.currentWeight);
+        Double inital = Double.valueOf(currentUser.weight.initialWeight);
+        Double change = inital - currentUserWeight;
+
+
         newWeightContent.put(scheme.COL_currentUser, currentUser.userCredentials.username);
         newWeightContent.put(scheme.COL_initialWeight,currentUser.weight.initialWeight);
-        newWeightContent.put(scheme.COL_dateWeighed,timeStamp);
+        newWeightContent.put(scheme.COL_dateWeighed,String.valueOf(timeStamp));
         newWeightContent.put(scheme.COL_goal_weight, currentUser.weight.goalWeight);
         newWeightContent.put(scheme.COL_current_weight,measurements.weight.currentWeight);
         newWeightContent.put(scheme.COL_WEIGHTCHANGE,change);
@@ -67,7 +77,6 @@ public class Weight_Database_Controller {
         newWeightContent.put(scheme.COL_LEG_MEASUREMENT,measurements.leg);
 
         long number = writable.insert(scheme.TABLE_NAME,null,newWeightContent);
-        Log.v("Insert #", String.valueOf(number));
         return number;
     }
     //Adds a new user to the Weight Tracking DB and returns the number
@@ -80,6 +89,7 @@ public class Weight_Database_Controller {
         content.put(scheme.COL_goal_weight, user.weight.goalWeight);
         content.put(scheme.COL_current_weight,user.weight.currentWeight);
         content.put(scheme.COL_initialWeight,user.weight.currentWeight);
+
         content.put(scheme.COL_WEIGHTCHANGE,change);
         content.putNull(scheme.COL_NECK_MEASUREMENT);
         content.putNull(scheme.COL_BICEP_MEASUREMENT);
@@ -169,8 +179,6 @@ try {
         String date = selectedRow.date;
         String weight = String.valueOf(selectedRow.weightThatDay);
         double goal = selectedRow.goalWeight;
-
-
         return writable.delete(scheme.TABLE_NAME,""+scheme.COL_dateWeighed+" = ? and "+scheme.COL_current_weight+" = ?",new String[]{date,weight});
     }
 
@@ -207,25 +215,11 @@ try {
 
     }
 
-    //Get all columns for spinner
-    public String[] getColumnHeaders(){
-        Cursor cursor = writable.rawQuery("Select * from " + scheme.TABLE_NAME + " where " + scheme.COL_currentUser + " = ?", new String[]{email});
-        cursor.close();
-        return cursor.getColumnNames();
-    }
 
-    public Users_Weight_DB_Results[] GetChartData(String theUsersEmail){
+    public Cursor GetChartData(String theUsersEmail){
         Cursor cursor = writable.rawQuery("Select * from " + scheme.TABLE_NAME + " where " + scheme.COL_currentUser + " = ?", new String[]{theUsersEmail});
-        Users_Weight_DB_Results[] results = new Users_Weight_DB_Results[cursor.getCount()];
 
-        cursor.moveToFirst();
-        for(int i = 0; i < cursor.getCount(); ++i){
-
-                results[i] = new Users_Weight_DB_Results(cursor,cursor.isLast());
-
-
-        }
-        return results;
+        return cursor;
     }
 
 

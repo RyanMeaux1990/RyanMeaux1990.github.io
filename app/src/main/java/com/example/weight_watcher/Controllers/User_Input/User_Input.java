@@ -3,7 +3,6 @@ package com.example.weight_watcher.Controllers.User_Input;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.util.Log;
 import android.view.View;
 
 import com.example.weight_watcher.Controllers.Database.Users_Database_Controller;
@@ -44,6 +43,7 @@ public class User_Input {
        this.userEmail = sharedPref.getString("email","");
        measurement_view.submitButton.setOnClickListener(AddToDBAndReturnHome);
    }
+
 //Convience Fucntion to get all text and add To DB
    public void GetMeasurementsAndAddToDB(){
        SharedPreferences sp = measurement_view.getApplicationContext().getSharedPreferences(String.valueOf(R.string.userPreference), Context.MODE_PRIVATE);
@@ -62,14 +62,6 @@ public class User_Input {
    //Sends Measurments to DB
    public void SendMeasurementsToDatabase(){
        Weight newWeight = new Weight(String.valueOf(weight),currentUser.weight.initialWeight,currentUser.weight.goalWeight);
-       Log.v("Neck",String.valueOf(neck));
-       Log.v("chest",String.valueOf(chest));
-       Log.v("Bicep",String.valueOf(bicep));
-       Log.v("waist",String.valueOf(waist));
-       Log.v("leg",String.valueOf(leg));
-       Log.v("Current",String.valueOf(newWeight.currentWeight));
-       Log.v("Goal",String.valueOf(newWeight.goalWeight));
-
 
        measurements = new Measurements(neck,chest,bicep,waist,leg,newWeight);
 
@@ -81,7 +73,7 @@ public class User_Input {
        this.results = database_controller.GetUser(usersEmail);
        this.weightResults = weight_database_controller.getLastEntry(usersEmail);
        currentUser = new User(results.firstName, results.lastName, results.email, results.password, weightResults.currentWeight,weightResults.goalWeight,results.phoneNumber);
-       Log.v("Get User",currentUser.firstName);
+
    }
 
     //On Click Listener For Submit Button
