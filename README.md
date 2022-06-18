@@ -102,7 +102,7 @@ For modifying the artifact this week I learned that if you do not have a really 
 6. Adding app functionality and complexity. 
 7. Providing data mining functionality. 
 
-###Course Outcome 
+### Course Outcome 
 3: I designed and evaluated computing solutions that solve a given problem using algorithmic principles and computer science practices and standards appropriate to its solution, while managing the trade-offs involved in design choices by completing the following enhancement. By using data mining we are able to solve the problem of visualizing their weight loss and muscle growth. 
 
 ### Reflection
