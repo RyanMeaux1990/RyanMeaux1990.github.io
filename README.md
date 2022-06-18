@@ -20,7 +20,7 @@ The Artifacts fit together and demonstrate my knowledge and skill within all of 
 ## Code 
 
 ### Original Code
-https://github.com/RyanMeaux1990/Weight_Watcher.git
+(https://github.com/RyanMeaux1990/Weight_Watcher.git)
 
 ### Two Factor Authentication
 https://github.com/RyanMeaux1990/RyanMeaux1990.github.io.git
