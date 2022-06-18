@@ -51,6 +51,9 @@ The reason I chose to include this one artifact for use in all three sections of
 3. Updating and managing databases.
 4. Using, updating, and managing data structures.
 
+###Course Outcome: 
+I developed a security mindset that anticipates adversarial exploits in software architecture and designs to expose potential vulnerabilities, mitigate design flaws, and ensure privacy and enhanced security of data and resources by completing the following enhancement. This was done by ensuring that there was two forms of authenticaon involved in the logging in of the app. 
+
 ### Course Objectives
 For the first step I proposed to extend the app by creating and building a form of two factor authentication.
 
@@ -73,6 +76,14 @@ For modifying the artifact the first thing week I learned a few things. The main
 5. Creating and updating User Interfaces.
 6. Adding app functionality and complexity. 
 
+### Course Outcome 
+1: I employed strategies for building collaborative environments that enable diverse audiences to support organizational decision making in the field of computer science by completing the following enhancement. This was done by building data structures that was explandable and usable by others. 
+
+2: I designed, developed, and delivered professional-quality oral, written, and visual communications that are coherent, technically sound, and appropriately adapted to specific audiences and contexts by completing the following enhancement. This was completed by ensuring that all of the necessary comments were added to the program. 
+
+Outcome 4: I demonstrated an ability to use well-founded and innovative techniques, skills, and tools in computing practices for the purpose of implementing computer solutions that deliver value and accomplish industry-specific goals by completing the following enhancement. This was done by expanding the data structures to allow for the implementation of data mining. 
+
+
 ### Reflection
 For modifying the artifact this week I learned that if you do not have a really modular piece of software, adding anything to it will be hard to do. During the second week I continued to have difficulties extending the database but eventually ended up getting it, after reading the documentation, I learned that all I had to do was upgrade the database version, and the sqlUpgrade function would fire and upgrade the database. Once the database upgraded, I was able to store the new data structures, which would make way for the next upgrade data mining.
 
@@ -90,6 +101,9 @@ For modifying the artifact this week I learned that if you do not have a really 
 5. Creating and updating User Interfaces.
 6. Adding app functionality and complexity. 
 7. Providing data mining functionality. 
+
+###Course Outcome 
+3: I designed and evaluated computing solutions that solve a given problem using algorithmic principles and computer science practices and standards appropriate to its solution, while managing the trade-offs involved in design choices by completing the following enhancement. By using data mining we are able to solve the problem of visualizing their weight loss and muscle growth. 
 
 ### Reflection
 For this week I struggled to use the Gradle system to incorporate the data mining package but through the use of trial and error I ended up getting it to finally download the API that I needed to bring in the charts for the data mining. Once I was able to get the package installed, I next had the chance to learn about creating charts within the app.
