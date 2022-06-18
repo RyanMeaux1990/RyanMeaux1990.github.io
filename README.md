@@ -17,6 +17,20 @@ The Artifacts fit together and demonstrate my knowledge and skill within all of 
 
 [![Code Review](http://img.youtube.com/vi/SLWc6VTsulM/0.jpg)](https://m.youtube.com/watch?v=SLWc6VTsulM&feature=youtu.be)
 
+## Code 
+
+### Original Code
+https://github.com/RyanMeaux1990/Weight_Watcher.git
+
+### Two Factor Authentication
+https://github.com/RyanMeaux1990/RyanMeaux1990.github.io.git
+
+### Data Structures
+https://github.com/RyanMeaux1990/RyanMeaux1990.github.io.git
+
+### Data Mining 
+https://github.com/RyanMeaux1990/RyanMeaux1990.github.io.git
+
 ## Artifact Description
 For all three the artifacts that I will be submitting come from an app that I created for my IT-365 class, known as Operating System Environments. The app that I created is called Weight Watcher. Originally, the app tracked the weight of a person, by the input the user puts in, and it allows the user to be able edit and delete any previous inputs, once the user gets to their desired weight, it will give them a notification. What my intentions are for this class, are to extend the app to be able to track body measurements, so the user's can do data mining on their own weights and body measurements.
 
