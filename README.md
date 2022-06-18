@@ -51,7 +51,7 @@ The reason I chose to include this one artifact for use in all three sections of
 3. Updating and managing databases.
 4. Using, updating, and managing data structures.
 
-###Course Outcome: 
+### Course Outcome: 
 I developed a security mindset that anticipates adversarial exploits in software architecture and designs to expose potential vulnerabilities, mitigate design flaws, and ensure privacy and enhanced security of data and resources by completing the following enhancement. This was done by ensuring that there was two forms of authenticaon involved in the logging in of the app. 
 
 ### Course Objectives
